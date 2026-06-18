@@ -389,10 +389,9 @@
         <!-- mapa -->
         <div class="col-12 col-lg-7">
           <div class="mapa-contenedor">
-            <!-- Pegá acá el src del iframe de Google Maps: tu ubicación → Compartir → Insertar un mapa -->
             <iframe
               class="mapa-iframe"
-              src=""
+              src="https://maps.google.com/maps?q=-36.533977,-59.133693&z=15&output=embed"
               title="Mapa de ubicación del CEPT N° 5 de Miranda"
               loading="lazy"
               allowfullscreen
@@ -401,6 +400,91 @@
         </div>
 
       </div>
+
+      <!-- formulario de contacto -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-12 col-lg-10">
+          <div class="tarjeta-formulario">
+
+            <form id="formulario" novalidate>
+              <h3 class="formulario-titulo">Formulario de contacto</h3>
+
+              <div class="row g-3">
+
+                <div class="col-12 col-md-6">
+                  <div class="campo">
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" id="nombre" name="nombre" required
+                           placeholder="Ej: María González" aria-describedby="error-nombre" />
+                    <span id="error-nombre" class="error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="campo">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required
+                           placeholder="ejemplo@correo.com" aria-describedby="error-email" />
+                    <span id="error-email" class="error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="campo">
+                    <label for="telefono">Teléfono <span class="opcional">(opcional)</span></label>
+                    <input type="tel" id="telefono" name="telefono"
+                           placeholder="Ej: 02296 123456" aria-describedby="error-telefono" />
+                    <span id="error-telefono" class="error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="campo">
+                    <label for="asunto">Asunto</label>
+                    <select id="asunto" name="asunto" required aria-describedby="error-asunto">
+                      <option value="" disabled selected>Seleccioná un asunto…</option>
+                      <option value="informacion-general">Información general</option>
+                      <option value="inscripcion">Inscripción</option>
+                      <option value="pedagogia-alternancia">Pedagogía de la Alternancia</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                    <span id="error-asunto" class="error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" required minlength="10" rows="4"
+                              placeholder="Escribí tu consulta acá…" aria-describedby="error-mensaje"></textarea>
+                    <span id="error-mensaje" class="error" aria-live="polite"></span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <button type="submit" class="btn boton-primario w-100">Enviar consulta</button>
+                </div>
+
+              </div>
+            </form>
+
+            <!-- panel de confirmación (oculto hasta enviar) -->
+            <div id="confirmacion" class="confirmacion oculto" tabindex="-1" role="status">
+              <div class="icono-check" aria-hidden="true">
+                <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="circulo" cx="26" cy="26" r="24" fill="none"/>
+                  <path class="tilde" fill="none" d="M13 27 l9 9 l17-18"/>
+                </svg>
+              </div>
+              <h3 class="formulario-titulo">¡Consulta enviada!</h3>
+              <p>Gracias por escribirnos. Te responderemos a la brevedad.</p>
+              <button type="button" id="btn-nueva" class="btn boton-primario mt-2">Hacer otra consulta</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -519,5 +603,6 @@
 
   <!-- scripts propios -->
   <script src="js/main.js"></script>
+  <script src="js/validacion.js"></script>
 </body>
 </html>
