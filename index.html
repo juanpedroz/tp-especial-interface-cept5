@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEPT N° 5 de Miranda</title>
+
+  <!-- Google Fonts: Fraunces + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-bs-spy="scroll" data-bs-target="#menu-principal" data-bs-offset="80">
+
+  <!-- ═══════════════════════════════════════════
+       HEADER (fijo)
+  ═══════════════════════════════════════════ -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top" id="menu-principal" aria-label="Navegación principal">
+      <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand logo" href="#inicio">
+          <img src="img/img_logo.jpeg" alt="Logo CEPT N° 5 de Miranda" class="logo-img" />
+          <span class="logo-sigla">CEPT</span>
+          <span class="logo-numero">N° 5</span>
+        </a>
+
+        <!-- Botón hamburguesa (mobile) -->
+        <button
+          class="navbar-toggler boton-menu"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#contenido-menu"
+          aria-controls="contenido-menu"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse" id="contenido-menu">
+
+          <!-- Links principales centrados -->
+          <ul class="navbar-nav mx-auto gap-1">
+            <li class="nav-item">
+              <a class="nav-link enlace-menu" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-menu" href="#quienes">Quiénes somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-menu" href="#noticias">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-menu" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+
+          <!-- Separador vertical (solo desktop) -->
+          <div class="vr d-none d-lg-block mx-3 separador" aria-hidden="true"></div>
+          <!-- Separador horizontal (solo mobile) -->
+          <hr class="d-lg-none separador-movil" aria-hidden="true" />
+
+          <!-- Acceso administrador -->
+          <a class="nav-link enlace-adm" href="#" role="button"
+             data-bs-toggle="modal" data-bs-target="#modal-login"
+             aria-haspopup="dialog">ADM</a>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN: INICIO (portada)
+  ═══════════════════════════════════════════ -->
+  <section id="inicio" class="portada">
+
+    <!-- Fondo: imagen + capa oscurecida -->
+    <div class="portada-fondo" aria-hidden="true"></div>
+
+    <!-- Contenido central -->
+    <div class="container portada-contenido">
+      <h1 class="portada-titulo">C.E.P.T. <span style="color: var(--dorado);">N° 5</span></h1>
+      <p class="portada-lugar">Estación Miranda</p>
+      <p class="portada-descripcion">Educación rural · Pedagogía de la Alternancia</p>
+      <p class="portada-eslogan">¡Juntos podemos!</p>
+      <div class="portada-botones">
+        <a href="#quienes" class="btn boton-primario">Conocé la escuela</a>
+        <a href="#noticias" class="btn boton-contorno">Ver noticias</a>
+      </div>
+    </div>
+
+    <!-- Flecha de scroll -->
+    <a href="#quienes" class="portada-flecha" aria-label="Ir a la siguiente sección">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </a>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN: QUIÉNES SOMOS
+  ═══════════════════════════════════════════ -->
+  <section id="quienes" class="seccion fondo-alterno">
+    <div class="container">
+
+      <!-- ── Vista: índice de tarjetas (visible por defecto) ── -->
+      <div id="indice-quienes">
+
+        <h2 class="titulo-seccion">Quiénes somos</h2>
+        <p class="descripcion-seccion">
+          Conocé nuestra historia, quiénes son nuestros egresados y la metodología
+          que nos da identidad como escuela rural.
+        </p>
+
+        <div class="row g-4 justify-content-center">
+
+          <!-- Tarjeta 1: Breve historia -->
+          <div class="col-12 col-md-4">
+            <article class="tarjeta acento-pino">
+              <div class="tarjeta-icono">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+                </svg>
+              </div>
+              <h3 class="tarjeta-titulo">Breve historia</h3>
+              <p class="tarjeta-texto">
+                De una iniciativa vecinal en 1991 a la vieja Estación del Ferrocarril:
+                así nació y creció la escuela.
+              </p>
+              <a href="#" class="tarjeta-enlace" data-tema="historia" aria-label="Leer más sobre la historia del CEPT">
+                Leer más →
+              </a>
+            </article>
+          </div>
+
+          <!-- Tarjeta 2: Perfil de egresados -->
+          <div class="col-12 col-md-4">
+            <article class="tarjeta acento-verde">
+              <div class="tarjeta-icono">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z"/>
+                  <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"/>
+                </svg>
+              </div>
+              <h3 class="tarjeta-titulo">Perfil de egresados</h3>
+              <p class="tarjeta-texto">
+                Formamos Técnicos en Producción Agropecuaria preparados para la vida,
+                el trabajo y su comunidad.
+              </p>
+              <a href="#" class="tarjeta-enlace" data-tema="egresados" aria-label="Leer más sobre el perfil de egresados">
+                Leer más →
+              </a>
+            </article>
+          </div>
+
+          <!-- Tarjeta 3: Pedagogía de la alternancia -->
+          <div class="col-12 col-md-4">
+            <article class="tarjeta acento-tierra">
+              <div class="tarjeta-icono">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+                  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+                </svg>
+              </div>
+              <h3 class="tarjeta-titulo">Pedagogía de la Alternancia</h3>
+              <p class="tarjeta-etiqueta">ACEPT · FACEPT</p>
+              <p class="tarjeta-texto">
+                Aprender alternando la escuela y el medio rural, con participación,
+                autogestión y cogestión.
+              </p>
+              <a href="#" class="tarjeta-enlace" data-tema="pedagogia" aria-label="Leer más sobre la pedagogía de la alternancia">
+                Leer más →
+              </a>
+            </article>
+          </div>
+
+        </div><!-- /row -->
+      </div><!-- /indice-quienes -->
+
+      <!-- ── Vista: detalle de tema (oculto por defecto) ── -->
+      <div id="detalle-quienes" class="detalle-tema" hidden>
+
+        <!-- Encabezado: migas de pan + botón volver -->
+        <div class="detalle-encabezado">
+          <nav aria-label="Ruta de navegación">
+            <ol class="breadcrumb migas">
+              <li class="breadcrumb-item">
+                <a href="#inicio" class="enlace-miga">Inicio</a>
+              </li>
+              <li class="breadcrumb-item">
+                <button type="button" class="enlace-miga volver-al-indice">Quiénes somos</button>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page" id="miga-actual">—</li>
+            </ol>
+          </nav>
+          <button type="button" class="boton-volver volver-al-indice">← Volver</button>
+        </div>
+
+        <!-- Foto del tema -->
+        <img id="detalle-foto" src="" alt="" class="detalle-foto" />
+
+        <!-- Título y cuerpo -->
+        <h2 id="detalle-titulo" class="detalle-titulo" tabindex="-1"></h2>
+        <div id="detalle-cuerpo" class="detalle-cuerpo"></div>
+
+        <!-- Navegación anterior / siguiente -->
+        <div class="navegacion-temas">
+          <button type="button" id="boton-anterior" class="btn boton-navegar">← Anterior</button>
+          <button type="button" id="boton-siguiente" class="btn boton-navegar">Siguiente →</button>
+        </div>
+
+      </div><!-- /detalle-quienes -->
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN: NOTICIAS
+  ═══════════════════════════════════════════ -->
+  <section id="noticias" class="seccion">
+
+    <!-- Panel: listado (carrusel + buscador) -->
+    <div id="panel-noticias" class="container">
+
+      <h2 class="titulo-seccion">Noticias</h2>
+      <p class="descripcion-seccion">
+        Actividades, eventos y logros de nuestra comunidad educativa.
+      </p>
+
+      <!-- CTA principal -->
+      <div class="noticias-mas">
+        <a href="noticias.html" class="btn boton-noticias-principal">
+          Ver todas las noticias
+          <span class="noticias-flecha" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- Vista previa: últimas noticias -->
+      <div class="noticias-preview-encabezado" aria-hidden="true">
+        <span class="noticias-preview-texto">Últimas noticias</span>
+      </div>
+
+      <!-- ── Carrusel: grupos de 3 noticias ── -->
+
+      <div class="contenedor-carrusel d-none d-md-block">
+        <div id="carrusel-noticias" class="carousel slide" data-bs-ride="false">
+
+          <div class="carousel-inner">
+
+            <!-- Slide 1: las 3 más recientes -->
+            <div class="carousel-item active">
+              <div class="row g-4">
+
+                <div class="col-12 col-md-4">
+                  <article class="noticia" data-id="noticia-1" data-categoria="Producción" data-fecha="2026-05-15" data-anio="2026">
+                    <img src="img/noticia-1.jpg" alt="Alumnos de 4° año sembrando trigo en el campo de la escuela" class="noticia-foto" />
+                    <div class="noticia-cuerpo">
+                      <time class="noticia-fecha" datetime="2026-05-15">15 de mayo de 2026</time>
+                      <span class="noticia-categoria">Producción</span>
+                      <h3 class="noticia-titulo">Jornada de siembra de trigo con alumnos de 4° año</h3>
+                      <a href="noticia.html?id=noticia-1" class="noticia-enlace">Leer más →</a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <article class="noticia" data-id="noticia-2" data-categoria="Institucional" data-fecha="2026-04-10" data-anio="2026">
+                    <img src="img/noticia-2.jpg" alt="Estudiantes de distintas escuelas agrarias reunidos en el CEPT" class="noticia-foto" />
+                    <div class="noticia-cuerpo">
+                      <time class="noticia-fecha" datetime="2026-04-10">10 de abril de 2026</time>
+                      <span class="noticia-categoria">Institucional</span>
+                      <h3 class="noticia-titulo">Intercambio con escuelas agrarias de la provincia</h3>
+                      <a href="noticia.html?id=noticia-2" class="noticia-enlace">Leer más →</a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <article class="noticia" data-id="noticia-3" data-categoria="Egresados" data-fecha="2026-03-28" data-anio="2026">
+                    <img src="img/noticia-3.jpg" alt="Acto de colación de grados de los egresados 2025" class="noticia-foto" />
+                    <div class="noticia-cuerpo">
+                      <time class="noticia-fecha" datetime="2026-03-28">28 de marzo de 2026</time>
+                      <span class="noticia-categoria">Egresados</span>
+                      <h3 class="noticia-titulo">Acto de colación de grados: egresados 2025</h3>
+                      <a href="noticia.html?id=noticia-3" class="noticia-enlace">Leer más →</a>
+                    </div>
+                  </article>
+                </div>
+
+              </div><!-- /row -->
+            </div><!-- /carousel-item 1 -->
+
+            <!-- Slide 2: las siguientes 3 -->
+            <div class="carousel-item">
+              <div class="row g-4">
+
+                <div class="col-12 col-md-4">
+                  <article class="noticia" data-id="noticia-4" data-categoria="Talleres" data-fecha="2026-02-14" data-anio="2026">
+                    <img src="img/noticia-4.jpg" alt="Alumnos trabajando con colmenas en el taller de apicultura" class="noticia-foto" />
+                    <div class="noticia-cuerpo">
+                      <time class="noticia-fecha" datetime="2026-02-14">14 de febrero de 2026</time>
+                      <span class="noticia-categoria">Talleres</span>
+                      <h3 class="noticia-titulo">Taller de apicultura y producción de miel</h3>
+                      <a href="noticia.html?id=noticia-4" class="noticia-enlace">Leer más →</a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <article class="noticia" data-id="noticia-5" data-categoria="Institucional" data-fecha="2026-01-20" data-anio="2026">
+                    <img src="img/noticia-5.jpg" alt="Acto de inicio del ciclo lectivo 2026 en el CEPT" class="noticia-foto" />
+                    <div class="noticia-cuerpo">
+                      <time class="noticia-fecha" datetime="2026-01-20">20 de enero de 2026</time>
+                      <span class="noticia-categoria">Institucional</span>
+                      <h3 class="noticia-titulo">Inicio del ciclo lectivo 2026</h3>
+                      <a href="noticia.html?id=noticia-5" class="noticia-enlace">Leer más →</a>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <article class="noticia" data-id="noticia-6" data-categoria="Convivencia" data-fecha="2025-12-12" data-anio="2025">
+                    <img src="img/noticia-6.jpg" alt="Fiesta de la cosecha: estudiantes y familias celebrando el cierre del año" class="noticia-foto" />
+                    <div class="noticia-cuerpo">
+                      <time class="noticia-fecha" datetime="2025-12-12">12 de diciembre de 2025</time>
+                      <span class="noticia-categoria">Convivencia</span>
+                      <h3 class="noticia-titulo">Cierre del año: fiesta de la cosecha</h3>
+                      <a href="noticia.html?id=noticia-6" class="noticia-enlace">Leer más →</a>
+                    </div>
+                  </article>
+                </div>
+
+              </div><!-- /row -->
+            </div><!-- /carousel-item 2 -->
+
+          </div><!-- /carousel-inner -->
+
+          <!-- Indicadores de página -->
+          <div class="carousel-indicators puntos-pagina">
+            <button type="button" data-bs-target="#carrusel-noticias" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Grupo de noticias 1"></button>
+            <button type="button" data-bs-target="#carrusel-noticias" data-bs-slide-to="1" aria-label="Grupo de noticias 2"></button>
+          </div>
+
+          <!-- Flechas anterior / siguiente -->
+          <button class="carousel-control-prev flecha-carrusel" type="button" data-bs-target="#carrusel-noticias" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Grupo anterior</span>
+          </button>
+          <button class="carousel-control-next flecha-carrusel" type="button" data-bs-target="#carrusel-noticias" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Grupo siguiente</span>
+          </button>
+
+        </div><!-- /carousel -->
+      </div><!-- /contenedor-carrusel -->
+
+      <!-- Carrusel MOBILE: 1 noticia por vez (visible en < md) -->
+      <div id="carrusel-mobile" class="carousel slide d-md-none mb-4" data-bs-ride="false">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <article class="noticia" data-id="noticia-1" data-categoria="Producción" data-fecha="2026-05-15" data-anio="2026">
+              <img src="img/noticia-1.jpg" alt="Alumnos de 4° año sembrando trigo en el campo de la escuela" class="noticia-foto" />
+              <div class="noticia-cuerpo">
+                <time class="noticia-fecha" datetime="2026-05-15">15 de mayo de 2026</time>
+                <span class="noticia-categoria">Producción</span>
+                <h3 class="noticia-titulo">Jornada de siembra de trigo con alumnos de 4° año</h3>
+                <a href="noticia.html?id=noticia-1" class="noticia-enlace">Leer más →</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-item">
+            <article class="noticia" data-id="noticia-2" data-categoria="Institucional" data-fecha="2026-04-10" data-anio="2026">
+              <img src="img/noticia-2.jpg" alt="Estudiantes de distintas escuelas agrarias reunidos en el CEPT" class="noticia-foto" />
+              <div class="noticia-cuerpo">
+                <time class="noticia-fecha" datetime="2026-04-10">10 de abril de 2026</time>
+                <span class="noticia-categoria">Institucional</span>
+                <h3 class="noticia-titulo">Intercambio con escuelas agrarias de la provincia</h3>
+                <a href="noticia.html?id=noticia-2" class="noticia-enlace">Leer más →</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-item">
+            <article class="noticia" data-id="noticia-3" data-categoria="Egresados" data-fecha="2026-03-28" data-anio="2026">
+              <img src="img/noticia-3.jpg" alt="Acto de colación de grados de los egresados 2025" class="noticia-foto" />
+              <div class="noticia-cuerpo">
+                <time class="noticia-fecha" datetime="2026-03-28">28 de marzo de 2026</time>
+                <span class="noticia-categoria">Egresados</span>
+                <h3 class="noticia-titulo">Acto de colación de grados: egresados 2025</h3>
+                <a href="noticia.html?id=noticia-3" class="noticia-enlace">Leer más →</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-item">
+            <article class="noticia" data-id="noticia-4" data-categoria="Talleres" data-fecha="2026-02-14" data-anio="2026">
+              <img src="img/noticia-4.jpg" alt="Alumnos trabajando con colmenas en el taller de apicultura" class="noticia-foto" />
+              <div class="noticia-cuerpo">
+                <time class="noticia-fecha" datetime="2026-02-14">14 de febrero de 2026</time>
+                <span class="noticia-categoria">Talleres</span>
+                <h3 class="noticia-titulo">Taller de apicultura y producción de miel</h3>
+                <a href="noticia.html?id=noticia-4" class="noticia-enlace">Leer más →</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-item">
+            <article class="noticia" data-id="noticia-5" data-categoria="Institucional" data-fecha="2026-01-20" data-anio="2026">
+              <img src="img/noticia-5.jpg" alt="Acto de inicio del ciclo lectivo 2026 en el CEPT" class="noticia-foto" />
+              <div class="noticia-cuerpo">
+                <time class="noticia-fecha" datetime="2026-01-20">20 de enero de 2026</time>
+                <span class="noticia-categoria">Institucional</span>
+                <h3 class="noticia-titulo">Inicio del ciclo lectivo 2026</h3>
+                <a href="noticia.html?id=noticia-5" class="noticia-enlace">Leer más →</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-item">
+            <article class="noticia" data-id="noticia-6" data-categoria="Convivencia" data-fecha="2025-12-12" data-anio="2025">
+              <img src="img/noticia-6.jpg" alt="Fiesta de la cosecha: estudiantes y familias celebrando el cierre del año" class="noticia-foto" />
+              <div class="noticia-cuerpo">
+                <time class="noticia-fecha" datetime="2025-12-12">12 de diciembre de 2025</time>
+                <span class="noticia-categoria">Convivencia</span>
+                <h3 class="noticia-titulo">Cierre del año: fiesta de la cosecha</h3>
+                <a href="noticia.html?id=noticia-6" class="noticia-enlace">Leer más →</a>
+              </div>
+            </article>
+          </div>
+
+        </div><!-- /carousel-inner -->
+
+        <!-- Indicadores (6 puntos) -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Noticia 1"></button>
+          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="1" aria-label="Noticia 2"></button>
+          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="2" aria-label="Noticia 3"></button>
+          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="3" aria-label="Noticia 4"></button>
+          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="4" aria-label="Noticia 5"></button>
+          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="5" aria-label="Noticia 6"></button>
+        </div>
+
+        <!-- Flechas -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-mobile" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Noticia anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrusel-mobile" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Noticia siguiente</span>
+        </button>
+
+      </div><!-- /carrusel-mobile -->
+
+    </div><!-- /panel-noticias -->
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN: CONTACTO
+  ═══════════════════════════════════════════ -->
+  <section id="contacto" class="seccion fondo-alterno">
+    <div class="container">
+
+      <h2 class="titulo-seccion">Contacto</h2>
+      <p class="descripcion-seccion">
+        Estamos en el Paraje Miranda, Rauch. Escribinos o llamanos, con gusto te atendemos.
+      </p>
+
+      <div class="row g-4 align-items-stretch">
+
+        <!-- Tarjeta de datos en verde pino -->
+        <div class="col-12 col-lg-5">
+          <div class="tarjeta-contacto">
+            <h3 class="contacto-titulo">Datos de contacto</h3>
+            <ul class="lista-contacto">
+
+              <li class="item-contacto">
+                <span class="icono-contacto" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                  </svg>
+                </span>
+                <a href="tel:+5402297000000" class="dato-contacto">(02297) XXX-XXX</a>
+              </li>
+
+              <li class="item-contacto">
+                <span class="icono-contacto" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                  </svg>
+                </span>
+                <a href="mailto:info@cept5miranda.edu.ar" class="dato-contacto">info@cept5miranda.edu.ar</a>
+              </li>
+
+              <li class="item-contacto">
+                <span class="icono-contacto" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                  </svg>
+                </span>
+                <span class="dato-contacto">Paraje Miranda, Rauch,<br>Buenos Aires, Argentina</span>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mapa de Google Maps -->
+        <div class="col-12 col-lg-7">
+          <div class="mapa-contenedor">
+            <!-- Reemplazá el src con el enlace de inserción de Google Maps:
+                 Google Maps → tu ubicación → Compartir → Insertar un mapa → copiá el atributo src -->
+            <iframe
+              class="mapa-iframe"
+              src=""
+              title="Mapa de ubicación del CEPT N° 5 de Miranda"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="pie-pagina">
+    <div class="container">
+
+      <div class="row pie-fila-superior">
+
+        <!-- Logo y descripción -->
+        <div class="col-12 col-md-4 pie-col">
+          <a href="#inicio" class="pie-logo">
+            <img src="img/img_logo.jpeg" alt="Logo CEPT N° 5 de Miranda" class="logo-img logo-img-pie" />
+            <span class="pie-logo-sigla">CEPT</span>
+            <span class="pie-logo-numero">N° 5</span>
+          </a>
+          <p class="pie-descripcion">
+            C.E.P.T. N° 5 · Miranda, Rauch, Buenos Aires<br>
+            Técnico en Producción Agropecuaria · Pedagogía de la Alternancia<br>
+            ACEPT / FACEPT
+          </p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="col-12 col-sm-6 col-md-4 pie-col">
+          <h4 class="pie-titulo-col">Navegación</h4>
+          <ul class="pie-lista">
+            <li><a href="#inicio"    class="pie-enlace">Inicio</a></li>
+            <li><a href="#quienes"  class="pie-enlace">Quiénes somos</a></li>
+            <li><a href="#noticias" class="pie-enlace">Noticias</a></li>
+            <li><a href="#contacto" class="pie-enlace">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Institucional -->
+        <div class="col-12 col-sm-6 col-md-4 pie-col">
+          <h4 class="pie-titulo-col">Institucional</h4>
+          <ul class="pie-lista">
+            <li><a href="#" class="pie-enlace">ACEPT</a></li>
+            <li><a href="#" class="pie-enlace">FACEPT</a></li>
+            <li><a href="#" class="pie-enlace pie-adm" role="button"
+                   data-bs-toggle="modal" data-bs-target="#modal-login"
+                   aria-haspopup="dialog">Acceso ADM</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /row -->
+
+      <div class="pie-inferior">
+        <p class="pie-copy">© 2026 CEPT N° 5 de Miranda. Todos los derechos reservados.</p>
+      </div>
+
+    </div><!-- /container -->
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL: LOGIN ADMINISTRADOR
+  ═══════════════════════════════════════════ -->
+  <div class="modal fade" id="modal-login" tabindex="-1"
+       aria-labelledby="titulo-modal-login" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content login-contenido">
+
+        <!-- Cabecera -->
+        <div class="modal-header login-cabecera">
+          <h2 class="modal-title login-titulo" id="titulo-modal-login">
+            Acceso administrador
+          </h2>
+          <button type="button" class="btn-close btn-close-white"
+                  data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <!-- Cuerpo -->
+        <div class="modal-body login-cuerpo">
+
+          <!-- Mensaje de error (oculto por defecto) -->
+          <div id="error-login" class="error-login" role="alert" hidden>
+            Usuario o contraseña incorrectos. Intentá de nuevo.
+          </div>
+
+          <form id="formulario-login" novalidate>
+
+            <div class="mb-4">
+              <label for="campo-usuario" class="etiqueta-campo">Usuario</label>
+              <input
+                type="text"
+                id="campo-usuario"
+                class="form-control campo-texto"
+                autocomplete="username"
+                required
+              />
+            </div>
+
+            <div class="mb-4">
+              <label for="campo-contrasena" class="etiqueta-campo">Contraseña</label>
+              <div class="grupo-contrasena">
+                <input
+                  type="password"
+                  id="campo-contrasena"
+                  class="form-control campo-texto"
+                  autocomplete="current-password"
+                  required
+                />
+                <button type="button" class="boton-ojo" id="boton-ver-contrasena"
+                        aria-label="Mostrar contraseña" aria-pressed="false">
+                  <!-- Ícono ojo (visible cuando contraseña oculta) -->
+                  <svg id="icono-ojo" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                  </svg>
+                  <!-- Ícono ojo tachado (visible cuando contraseña visible) -->
+                  <svg id="icono-ojo-cerrado" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" hidden>
+                    <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486z"/>
+                    <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                    <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn boton-primario w-100">
+              Iniciar sesión
+            </button>
+
+          </form>
+
+        </div><!-- /login-cuerpo -->
+      </div><!-- /login-contenido -->
+    </div>
+  </div><!-- /modal-login -->
+
+  <!-- Bootstrap 5 JS (bundle con Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmhM+wFkMqBM+bJQElLNLCJF7O7"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- JS propio -->
+  <script src="js/main.js"></script>
+</body>
+</html>
