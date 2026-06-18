@@ -63,7 +63,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fondo-alterno {
-  background-color: #DDE8E1;
+  background-color: var(--crema-medio);
+}
+
+.fondo-verde {
+  background-color: var(--verde-pino);
+}
+
+/* Overrides de texto y elementos para sección oscura */
+.fondo-verde .titulo-seccion {
+  color: #fff;
+}
+
+.fondo-verde .descripcion-seccion {
+  color: var(--claro);
+}
+
+.fondo-verde .noticias-subtitulo {
+  color: var(--claro);
+  opacity: 0.6;
+}
+
+.fondo-verde .noticias-subtitulo::before,
+.fondo-verde .noticias-subtitulo::after {
+  background: rgba(214, 230, 219, 0.25);
+}
+
+.fondo-verde .boton-noticias {
+  background-color: var(--dorado);
+  color: var(--dorado-texto);
+  border-color: transparent;
+}
+
+.fondo-verde .boton-noticias:hover,
+.fondo-verde .boton-noticias:focus-visible {
+  background-color: transparent;
+  color: var(--dorado);
+  border-color: var(--dorado);
 }
 
 .seccion-contacto {
