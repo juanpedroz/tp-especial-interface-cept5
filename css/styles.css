@@ -56,6 +56,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 3.5rem 1.5rem;
   text-align: center;
   scroll-margin-top: var(--alto-menu); /* ancla no queda tapada por el menú */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .fondo-blanco {
@@ -106,10 +110,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .seccion-contacto {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* hereda min-height y flex de .seccion */
+}
+
+.seccion > .container {
+  width: 100%;
 }
 
 /* Texto de ejemplo (se elimina al completar cada story) */
