@@ -76,17 +76,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fondo-oscuro .descripcion-seccion {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--claro);
 }
 
 .fondo-oscuro .noticias-subtitulo {
-  color: rgba(255, 255, 255, 0.5);
   opacity: 1;
+}
+
+.fondo-oscuro .noticias-subtitulo span {
+  color: var(--claro);
 }
 
 .fondo-oscuro .noticias-subtitulo::before,
 .fondo-oscuro .noticias-subtitulo::after {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(214, 230, 219, 0.35);
 }
 
 .fondo-oscuro .boton-noticias {
