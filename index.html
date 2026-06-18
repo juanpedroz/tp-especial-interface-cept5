@@ -99,7 +99,7 @@
   </section>
 
   <!-- quiénes somos -->
-  <section id="quienes" class="seccion fondo-alterno">
+  <section id="quienes" class="seccion fondo-blanco">
     <div class="container">
 
       <!-- índice de temas -->
@@ -333,7 +333,7 @@
   </section>
 
   <!-- contacto -->
-  <section id="contacto" class="seccion fondo-alterno">
+  <section id="contacto" class="seccion fondo-alterno seccion-contacto">
     <div class="container">
 
       <h2 class="titulo-seccion">Contacto</h2>
@@ -343,8 +343,8 @@
 
       <div class="row g-4 align-items-stretch">
 
-        <!-- datos de contacto -->
-        <div class="col-12 col-lg-5">
+        <!-- datos de contacto + mapa -->
+        <div class="col-12 col-lg-5 d-flex flex-column gap-4 order-lg-2">
           <div class="tarjeta-contacto">
             <h3 class="contacto-titulo">Datos de contacto</h3>
             <ul class="lista-contacto">
@@ -379,11 +379,8 @@
 
             </ul>
           </div>
-        </div>
 
-        <!-- mapa -->
-        <div class="col-12 col-lg-7">
-          <div class="mapa-contenedor">
+          <div class="mapa-contenedor flex-grow-1">
             <iframe
               class="mapa-iframe"
               src="https://maps.google.com/maps?q=-36.533977,-59.133693&z=15&output=embed"
@@ -394,12 +391,9 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- formulario de contacto -->
-      <div class="row justify-content-center mt-4">
-        <div class="col-12 col-lg-10">
-          <div class="tarjeta-formulario">
+        <!-- formulario de contacto -->
+        <div class="col-12 col-lg-7 order-lg-1">
+          <div class="tarjeta-formulario h-100">
 
             <form id="formulario" novalidate>
               <h3 class="formulario-titulo">Formulario de contacto</h3>

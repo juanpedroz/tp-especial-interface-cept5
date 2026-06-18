@@ -58,8 +58,19 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: var(--alto-menu); /* ancla no queda tapada por el menú */
 }
 
+.fondo-blanco {
+  background-color: #fff;
+}
+
 .fondo-alterno {
-  background-color: var(--crema-medio);
+  background-color: #DDE8E1;
+}
+
+.seccion-contacto {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Texto de ejemplo (se elimina al completar cada story) */
@@ -991,7 +1002,7 @@ a.dato-contacto:focus {
 /* Mapa */
 .mapa-contenedor {
   height: 100%;
-  min-height: 320px;
+  min-height: 200px;
   border-radius: var(--radio-tarjeta);
   overflow: hidden;
 }
@@ -999,7 +1010,7 @@ a.dato-contacto:focus {
 .mapa-iframe {
   width: 100%;
   height: 100%;
-  min-height: 320px;
+  min-height: 200px;
   border: none;
   display: block;
   background-color: var(--crema-medio);
