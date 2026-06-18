@@ -1,6 +1,6 @@
-// main.js — CEPT N° 5 de Miranda
+// main.js
 
-// ─── Menú mobile: cerrar al tocar un enlace ───────────────
+// menú móvil: cierra al tocar un enlace
 document.querySelectorAll('#contenido-menu .enlace-menu').forEach(function (enlace) {
   enlace.addEventListener('click', function () {
     var menu = document.getElementById('contenido-menu');
@@ -9,7 +9,7 @@ document.querySelectorAll('#contenido-menu .enlace-menu').forEach(function (enla
   });
 });
 
-// ─── Quiénes somos: detalle de temas ─────────────────────
+// quiénes somos: detalle de cada tema
 var temas = [
   {
     id: 'historia',
@@ -109,7 +109,7 @@ function cerrarDetalle() {
   document.getElementById('quienes').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Clic en "Leer más" de cada tarjeta
+
 document.querySelectorAll('.tarjeta-enlace').forEach(function (enlace) {
   enlace.addEventListener('click', function (e) {
     e.preventDefault();
@@ -117,12 +117,12 @@ document.querySelectorAll('.tarjeta-enlace').forEach(function (enlace) {
   });
 });
 
-// Volver al índice (botón "← Volver" y miga "Quiénes somos")
+
 document.querySelectorAll('.volver-al-indice').forEach(function (el) {
   el.addEventListener('click', cerrarDetalle);
 });
 
-// Navegación anterior / siguiente
+
 document.getElementById('boton-anterior').addEventListener('click', function () {
   if (temaActual > 0) { mostrarDetalle(--temaActual); }
 });
@@ -131,9 +131,7 @@ document.getElementById('boton-siguiente').addEventListener('click', function ()
   if (temaActual < temas.length - 1) { mostrarDetalle(++temaActual); }
 });
 
-// ─── Login administrador ──────────────────────────────────
-
-// Mostrar / ocultar contraseña
+// login
 document.getElementById('boton-ver-contrasena').addEventListener('click', function () {
   var campo        = document.getElementById('campo-contrasena');
   var iconoOjo     = document.getElementById('icono-ojo');
@@ -147,12 +145,12 @@ document.getElementById('boton-ver-contrasena').addEventListener('click', functi
   this.setAttribute('aria-pressed', mostrar ? 'true' : 'false');
 });
 
-// Evitar envío del formulario (maqueta sin backend)
+// formulario desactivado (maqueta sin backend)
 document.getElementById('formulario-login').addEventListener('submit', function (e) {
   e.preventDefault();
 });
 
-// Limpiar el formulario cada vez que el modal se abre
+// limpiar el formulario al abrir el modal
 document.getElementById('modal-login').addEventListener('show.bs.modal', function () {
   document.getElementById('formulario-login').reset();
   document.getElementById('error-login').hidden       = true;

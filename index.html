@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CEPT N° 5 de Miranda</title>
 
-  <!-- Google Fonts: Fraunces + Inter -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -26,21 +26,18 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target="#menu-principal" data-bs-offset="80">
 
-  <!-- ═══════════════════════════════════════════
-       HEADER (fijo)
-  ═══════════════════════════════════════════ -->
+  <!-- encabezado -->
   <header>
     <nav class="navbar navbar-expand-lg fixed-top" id="menu-principal" aria-label="Navegación principal">
       <div class="container">
 
-        <!-- Logo -->
         <a class="navbar-brand logo" href="#inicio">
           <img src="img/img_logo.jpeg" alt="Logo CEPT N° 5 de Miranda" class="logo-img" />
           <span class="logo-sigla">CEPT</span>
           <span class="logo-numero">N° 5</span>
         </a>
 
-        <!-- Botón hamburguesa (mobile) -->
+        <!-- botón menú (móvil) -->
         <button
           class="navbar-toggler boton-menu"
           type="button"
@@ -53,10 +50,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú colapsable -->
         <div class="collapse navbar-collapse" id="contenido-menu">
-
-          <!-- Links principales centrados -->
           <ul class="navbar-nav mx-auto gap-1">
             <li class="nav-item">
               <a class="nav-link enlace-menu" href="#inicio">Inicio</a>
@@ -72,30 +66,23 @@
             </li>
           </ul>
 
-          <!-- Separador vertical (solo desktop) -->
           <div class="vr d-none d-lg-block mx-3 separador" aria-hidden="true"></div>
-          <!-- Separador horizontal (solo mobile) -->
           <hr class="d-lg-none separador-movil" aria-hidden="true" />
 
-          <!-- Acceso administrador -->
           <a class="nav-link enlace-adm" href="#" role="button"
              data-bs-toggle="modal" data-bs-target="#modal-login"
              aria-haspopup="dialog">ADM</a>
-
         </div>
+
       </div>
     </nav>
   </header>
 
-  <!-- ═══════════════════════════════════════════
-       SECCIÓN: INICIO (portada)
-  ═══════════════════════════════════════════ -->
+  <!-- inicio -->
   <section id="inicio" class="portada">
 
-    <!-- Fondo: imagen + capa oscurecida -->
     <div class="portada-fondo" aria-hidden="true"></div>
 
-    <!-- Contenido central -->
     <div class="container portada-contenido">
       <h1 class="portada-titulo">C.E.P.T. <span style="color: var(--dorado);">N° 5</span></h1>
       <p class="portada-lugar">Estación Miranda</p>
@@ -107,7 +94,7 @@
       </div>
     </div>
 
-    <!-- Flecha de scroll -->
+    <!-- flecha de scroll -->
     <a href="#quienes" class="portada-flecha" aria-label="Ir a la siguiente sección">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -116,13 +103,11 @@
 
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SECCIÓN: QUIÉNES SOMOS
-  ═══════════════════════════════════════════ -->
+  <!-- quiénes somos -->
   <section id="quienes" class="seccion fondo-alterno">
     <div class="container">
 
-      <!-- ── Vista: índice de tarjetas (visible por defecto) ── -->
+      <!-- índice de temas -->
       <div id="indice-quienes">
 
         <h2 class="titulo-seccion">Quiénes somos</h2>
@@ -133,7 +118,7 @@
 
         <div class="row g-4 justify-content-center">
 
-          <!-- Tarjeta 1: Breve historia -->
+          <!-- tarjeta historia -->
           <div class="col-12 col-md-4">
             <article class="tarjeta acento-pino">
               <div class="tarjeta-icono">
@@ -152,7 +137,7 @@
             </article>
           </div>
 
-          <!-- Tarjeta 2: Perfil de egresados -->
+          <!-- tarjeta egresados -->
           <div class="col-12 col-md-4">
             <article class="tarjeta acento-verde">
               <div class="tarjeta-icono">
@@ -172,7 +157,7 @@
             </article>
           </div>
 
-          <!-- Tarjeta 3: Pedagogía de la alternancia -->
+          <!-- tarjeta pedagogía -->
           <div class="col-12 col-md-4">
             <article class="tarjeta acento-tierra">
               <div class="tarjeta-icono">
@@ -193,13 +178,12 @@
             </article>
           </div>
 
-        </div><!-- /row -->
+        </div>
       </div><!-- /indice-quienes -->
 
-      <!-- ── Vista: detalle de tema (oculto por defecto) ── -->
+      <!-- detalle del tema -->
       <div id="detalle-quienes" class="detalle-tema" hidden>
 
-        <!-- Encabezado: migas de pan + botón volver -->
         <div class="detalle-encabezado">
           <nav aria-label="Ruta de navegación">
             <ol class="breadcrumb migas">
@@ -215,14 +199,11 @@
           <button type="button" class="boton-volver volver-al-indice">← Volver</button>
         </div>
 
-        <!-- Foto del tema -->
         <img id="detalle-foto" src="" alt="" class="detalle-foto" />
-
-        <!-- Título y cuerpo -->
         <h2 id="detalle-titulo" class="detalle-titulo" tabindex="-1"></h2>
         <div id="detalle-cuerpo" class="detalle-cuerpo"></div>
 
-        <!-- Navegación anterior / siguiente -->
+        <!-- botones anterior / siguiente -->
         <div class="navegacion-temas">
           <button type="button" id="boton-anterior" class="btn boton-navegar">← Anterior</button>
           <button type="button" id="boton-siguiente" class="btn boton-navegar">Siguiente →</button>
@@ -230,37 +211,29 @@
 
       </div><!-- /detalle-quienes -->
 
-    </div><!-- /container -->
+    </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SECCIÓN: NOTICIAS
-  ═══════════════════════════════════════════ -->
+  <!-- noticias -->
   <section id="noticias" class="seccion">
-
-    <!-- Panel: listado (carrusel + buscador) -->
-    <div id="panel-noticias" class="container">
+    <div class="container">
 
       <h2 class="titulo-seccion">Noticias</h2>
       <p class="descripcion-seccion">
         Actividades, eventos y logros de nuestra comunidad educativa.
       </p>
 
-      <!-- CTA principal -->
+      <!-- botón ver noticias -->
       <div class="noticias-mas">
-        <a href="noticias.html" class="btn boton-noticias-principal">
-          Ver todas las noticias
-          <span class="noticias-flecha" aria-hidden="true">→</span>
-        </a>
+        <a href="noticias.html" class="btn boton-noticias">Ver todas las noticias →</a>
       </div>
 
-      <!-- Vista previa: últimas noticias -->
-      <div class="noticias-preview-encabezado" aria-hidden="true">
-        <span class="noticias-preview-texto">Últimas noticias</span>
+      <!-- separador -->
+      <div class="noticias-subtitulo" aria-hidden="true">
+        <span>Últimas noticias</span>
       </div>
 
-      <!-- ── Últimas 3 noticias (desktop) ── -->
-
+      <!-- noticias en escritorio -->
       <div class="row g-4 d-none d-md-flex">
 
         <div class="col-12 col-md-4">
@@ -299,15 +272,15 @@
           </article>
         </div>
 
-      </div><!-- /row desktop -->
+      </div>
 
-      <!-- Carrusel MOBILE: 1 noticia por vez (visible en < md) -->
+      <!-- carrusel móvil -->
       <div id="carrusel-mobile" class="carousel slide d-md-none mb-4" data-bs-ride="false">
 
         <div class="carousel-inner">
 
           <div class="carousel-item active">
-            <article class="noticia" data-id="noticia-1" data-categoria="Producción" data-fecha="2026-05-15" data-anio="2026">
+            <article class="noticia">
               <img src="img/noticia-1.jpg" alt="Alumnos de 4° año sembrando trigo en el campo de la escuela" class="noticia-foto" />
               <div class="noticia-cuerpo">
                 <time class="noticia-fecha" datetime="2026-05-15">15 de mayo de 2026</time>
@@ -319,7 +292,7 @@
           </div>
 
           <div class="carousel-item">
-            <article class="noticia" data-id="noticia-2" data-categoria="Institucional" data-fecha="2026-04-10" data-anio="2026">
+            <article class="noticia">
               <img src="img/noticia-2.jpg" alt="Estudiantes de distintas escuelas agrarias reunidos en el CEPT" class="noticia-foto" />
               <div class="noticia-cuerpo">
                 <time class="noticia-fecha" datetime="2026-04-10">10 de abril de 2026</time>
@@ -331,7 +304,7 @@
           </div>
 
           <div class="carousel-item">
-            <article class="noticia" data-id="noticia-3" data-categoria="Egresados" data-fecha="2026-03-28" data-anio="2026">
+            <article class="noticia">
               <img src="img/noticia-3.jpg" alt="Acto de colación de grados de los egresados 2025" class="noticia-foto" />
               <div class="noticia-cuerpo">
                 <time class="noticia-fecha" datetime="2026-03-28">28 de marzo de 2026</time>
@@ -342,16 +315,14 @@
             </article>
           </div>
 
-        </div><!-- /carousel-inner -->
+        </div>
 
-        <!-- Indicadores (3 puntos) -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Noticia 1"></button>
           <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="1" aria-label="Noticia 2"></button>
           <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="2" aria-label="Noticia 3"></button>
         </div>
 
-        <!-- Flechas -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carrusel-mobile" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Noticia anterior</span>
@@ -361,15 +332,12 @@
           <span class="visually-hidden">Noticia siguiente</span>
         </button>
 
-      </div><!-- /carrusel-mobile -->
+      </div>
 
-    </div><!-- /panel-noticias -->
-
+    </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       SECCIÓN: CONTACTO
-  ═══════════════════════════════════════════ -->
+  <!-- contacto -->
   <section id="contacto" class="seccion fondo-alterno">
     <div class="container">
 
@@ -380,7 +348,7 @@
 
       <div class="row g-4 align-items-stretch">
 
-        <!-- Tarjeta de datos en verde pino -->
+        <!-- datos de contacto -->
         <div class="col-12 col-lg-5">
           <div class="tarjeta-contacto">
             <h3 class="contacto-titulo">Datos de contacto</h3>
@@ -418,11 +386,10 @@
           </div>
         </div>
 
-        <!-- Mapa de Google Maps -->
+        <!-- mapa -->
         <div class="col-12 col-lg-7">
           <div class="mapa-contenedor">
-            <!-- Reemplazá el src con el enlace de inserción de Google Maps:
-                 Google Maps → tu ubicación → Compartir → Insertar un mapa → copiá el atributo src -->
+            <!-- Pegá acá el src del iframe de Google Maps: tu ubicación → Compartir → Insertar un mapa -->
             <iframe
               class="mapa-iframe"
               src=""
@@ -433,19 +400,17 @@
           </div>
         </div>
 
-      </div><!-- /row -->
-    </div><!-- /container -->
+      </div>
+    </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
+  <!-- pie de página -->
   <footer id="pie-pagina">
     <div class="container">
 
       <div class="row pie-fila-superior">
 
-        <!-- Logo y descripción -->
+        <!-- logo -->
         <div class="col-12 col-md-4 pie-col">
           <a href="#inicio" class="pie-logo">
             <img src="img/img_logo.jpeg" alt="Logo CEPT N° 5 de Miranda" class="logo-img logo-img-pie" />
@@ -459,7 +424,7 @@
           </p>
         </div>
 
-        <!-- Navegación -->
+        <!-- navegación -->
         <div class="col-12 col-sm-6 col-md-4 pie-col">
           <h4 class="pie-titulo-col">Navegación</h4>
           <ul class="pie-lista">
@@ -470,7 +435,7 @@
           </ul>
         </div>
 
-        <!-- Institucional -->
+        <!-- institucional -->
         <div class="col-12 col-sm-6 col-md-4 pie-col">
           <h4 class="pie-titulo-col">Institucional</h4>
           <ul class="pie-lista">
@@ -482,36 +447,30 @@
           </ul>
         </div>
 
-      </div><!-- /row -->
+      </div>
 
       <div class="pie-inferior">
         <p class="pie-copy">© 2026 CEPT N° 5 de Miranda. Todos los derechos reservados.</p>
       </div>
 
-    </div><!-- /container -->
+    </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════
-       MODAL: LOGIN ADMINISTRADOR
-  ═══════════════════════════════════════════ -->
+  <!-- modal de login -->
   <div class="modal fade" id="modal-login" tabindex="-1"
        aria-labelledby="titulo-modal-login" aria-modal="true" role="dialog">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content login-contenido">
 
-        <!-- Cabecera -->
         <div class="modal-header login-cabecera">
-          <h2 class="modal-title login-titulo" id="titulo-modal-login">
-            Acceso administrador
-          </h2>
+          <h2 class="modal-title login-titulo" id="titulo-modal-login">Acceso administrador</h2>
           <button type="button" class="btn-close btn-close-white"
                   data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
 
-        <!-- Cuerpo -->
         <div class="modal-body login-cuerpo">
 
-          <!-- Mensaje de error (oculto por defecto) -->
+          <!-- error de login -->
           <div id="error-login" class="error-login" role="alert" hidden>
             Usuario o contraseña incorrectos. Intentá de nuevo.
           </div>
@@ -520,33 +479,19 @@
 
             <div class="mb-4">
               <label for="campo-usuario" class="etiqueta-campo">Usuario</label>
-              <input
-                type="text"
-                id="campo-usuario"
-                class="form-control campo-texto"
-                autocomplete="username"
-                required
-              />
+              <input type="text" id="campo-usuario" class="form-control campo-texto" autocomplete="username" required />
             </div>
 
             <div class="mb-4">
               <label for="campo-contrasena" class="etiqueta-campo">Contraseña</label>
               <div class="grupo-contrasena">
-                <input
-                  type="password"
-                  id="campo-contrasena"
-                  class="form-control campo-texto"
-                  autocomplete="current-password"
-                  required
-                />
+                <input type="password" id="campo-contrasena" class="form-control campo-texto" autocomplete="current-password" required />
                 <button type="button" class="boton-ojo" id="boton-ver-contrasena"
                         aria-label="Mostrar contraseña" aria-pressed="false">
-                  <!-- Ícono ojo (visible cuando contraseña oculta) -->
                   <svg id="icono-ojo" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
                   </svg>
-                  <!-- Ícono ojo tachado (visible cuando contraseña visible) -->
                   <svg id="icono-ojo-cerrado" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true" hidden>
                     <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486z"/>
                     <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
@@ -556,25 +501,23 @@
               </div>
             </div>
 
-            <button type="submit" class="btn boton-primario w-100">
-              Iniciar sesión
-            </button>
+            <button type="submit" class="btn boton-primario w-100">Iniciar sesión</button>
 
           </form>
 
-        </div><!-- /login-cuerpo -->
-      </div><!-- /login-contenido -->
+        </div>
+      </div>
     </div>
-  </div><!-- /modal-login -->
+  </div>
 
-  <!-- Bootstrap 5 JS (bundle con Popper) -->
+  <!-- Bootstrap JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmhM+wFkMqBM+bJQElLNLCJF7O7"
     crossorigin="anonymous"
   ></script>
 
-  <!-- JS propio -->
+  <!-- scripts propios -->
   <script src="js/main.js"></script>
 </body>
 </html>

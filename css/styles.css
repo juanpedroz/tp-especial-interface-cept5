@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   VARIABLES GLOBALES
-═══════════════════════════════════════════════════════════ */
+﻿/* VARIABLES GLOBALES */
 :root {
   /* Colores */
   --verde-pino:   #1F4D3A;   /* header, footer, títulos, botones primarios */
@@ -25,9 +23,7 @@
   --alto-menu: 68px;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RESET Y BASE GLOBAL
-═══════════════════════════════════════════════════════════ */
+/* RESET Y BASE GLOBAL */
 *,
 *::before,
 *::after {
@@ -55,9 +51,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   SECCIONES
-═══════════════════════════════════════════════════════════ */
+/* SECCIONES */
 .seccion {
   padding: 5rem 1.5rem;
   text-align: center;
@@ -76,9 +70,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.5rem;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   HEADER — NAVBAR
-═══════════════════════════════════════════════════════════ */
+/* HEADER — NAVBAR */
 #menu-principal {
   background-color: var(--verde-pino);
   min-height: var(--alto-menu);
@@ -185,9 +177,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   PORTADA (hero)
-═══════════════════════════════════════════════════════════ */
+/* PORTADA (hero) */
 .portada {
   position: relative;
   min-height: calc(100vh - var(--alto-menu));
@@ -331,9 +321,7 @@ h1, h2, h3, h4, h5, h6 {
   50%       { transform: translateX(-50%) translateY(8px); }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   SECCIONES — ELEMENTOS COMUNES
-═══════════════════════════════════════════════════════════ */
+/* SECCIONES — ELEMENTOS COMUNES */
 
 /* Título principal de sección */
 .titulo-seccion {
@@ -351,9 +339,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   QUIÉNES SOMOS — TARJETAS
-═══════════════════════════════════════════════════════════ */
+/* QUIÉNES SOMOS — TARJETAS */
 .tarjeta {
   background-color: #fff;
   border-radius: var(--radio-tarjeta);
@@ -429,9 +415,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   QUIÉNES SOMOS — DETALLE DE TEMA
-═══════════════════════════════════════════════════════════ */
+/* QUIÉNES SOMOS — DETALLE DE TEMA */
 .detalle-tema {
   max-width: 760px;
   margin: 0 auto;
@@ -573,9 +557,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: not-allowed;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   NOTICIAS — CARRUSEL
-═══════════════════════════════════════════════════════════ */
+/* NOTICIAS — CARRUSEL */
 
 /* Wrapper con espacio horizontal para las flechas */
 .contenedor-carrusel {
@@ -632,9 +614,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   NOTICIAS — TARJETA
-═══════════════════════════════════════════════════════════ */
+/* NOTICIAS — TARJETA */
 .noticia {
   background-color: #fff;
   border-radius: var(--radio-tarjeta);
@@ -716,9 +696,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   NOTICIAS — BUSCADOR
-═══════════════════════════════════════════════════════════ */
+/* NOTICIAS — BUSCADOR */
 .buscador {
   margin-top: 3.5rem;
   padding-top: 2.5rem;
@@ -837,7 +815,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2rem 0 3rem;
 }
 
-.boton-noticias-principal {
+.boton-noticias {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -853,8 +831,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.18s, color 0.18s, border-color 0.18s;
 }
 
-.boton-noticias-principal:hover,
-.boton-noticias-principal:focus-visible {
+.boton-noticias:hover,
+.boton-noticias:focus-visible {
   background-color: transparent;
   color: var(--verde-pino);
   border-color: var(--verde-pino);
@@ -866,12 +844,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.18s;
 }
 
-.boton-noticias-principal:hover .noticias-flecha {
+.boton-noticias:hover .noticias-flecha {
   transform: translateX(4px);
 }
 
 /* ── Separador "Últimas noticias" ── */
-.noticias-preview-encabezado {
+.noticias-subtitulo {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -879,15 +857,15 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.55;
 }
 
-.noticias-preview-encabezado::before,
-.noticias-preview-encabezado::after {
+.noticias-subtitulo::before,
+.noticias-subtitulo::after {
   content: '';
   flex: 1;
   height: 1px;
   background: var(--verde-claro);
 }
 
-.noticias-preview-texto {
+.noticias-subtitulo span {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -896,9 +874,7 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   NOTICIAS — ARTÍCULO ABIERTO
-═══════════════════════════════════════════════════════════ */
+/* NOTICIAS — ARTÍCULO ABIERTO */
 
 /* Foto a ancho completo */
 .articulo-foto {
@@ -956,9 +932,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.1rem;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   CONTACTO
-═══════════════════════════════════════════════════════════ */
+/* CONTACTO */
 
 /* Tarjeta de datos en verde pino */
 .tarjeta-contacto {
@@ -1030,9 +1004,7 @@ a.dato-contacto:focus {
   background-color: var(--crema-medio);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════════════════════ */
+/* FOOTER */
 #pie-pagina {
   background-color: var(--verde-pino);
   padding-top: 3rem;
@@ -1141,9 +1113,7 @@ a.dato-contacto:focus {
   margin: 0;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   LOGIN ADMINISTRADOR (modal)
-═══════════════════════════════════════════════════════════ */
+/* LOGIN ADMINISTRADOR (modal) */
 
 /* Contenido del modal */
 .login-contenido {
@@ -1220,9 +1190,7 @@ a.dato-contacto:focus {
   z-index: 1;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   CARRUSEL MOBILE — 1 noticia por vez
-═══════════════════════════════════════════════════════════ */
+/* CARRUSEL MOBILE — 1 noticia por vez */
 
 #carrusel-mobile {
   padding-bottom: 2.75rem;
@@ -1272,9 +1240,7 @@ a.dato-contacto:focus {
   opacity: 1;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE — MENÚ MOBILE (< 992 px)
-═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — MENÚ MOBILE (< 992 px) */
 @media (max-width: 991.98px) {
 
   /* Fondo explícito en el panel desplegable del hamburguesa */
@@ -1293,9 +1259,7 @@ a.dato-contacto:focus {
 
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE — MOBILE (< 768 px)
-═══════════════════════════════════════════════════════════ */
+/* RESPONSIVE — MOBILE (< 768 px) */
 @media (max-width: 767.98px) {
 
   /* Reducir padding vertical de secciones */
