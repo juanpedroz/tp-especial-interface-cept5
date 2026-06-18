@@ -66,37 +66,37 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--crema-medio);
 }
 
-.fondo-verde {
-  background-color: var(--verde-pino);
+.fondo-oscuro {
+  background-color: var(--verde-claro);
 }
 
 /* Overrides de texto y elementos para sección oscura */
-.fondo-verde .titulo-seccion {
+.fondo-oscuro .titulo-seccion {
   color: #fff;
 }
 
-.fondo-verde .descripcion-seccion {
-  color: var(--claro);
+.fondo-oscuro .descripcion-seccion {
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.fondo-verde .noticias-subtitulo {
-  color: var(--claro);
-  opacity: 0.6;
+.fondo-oscuro .noticias-subtitulo {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
 }
 
-.fondo-verde .noticias-subtitulo::before,
-.fondo-verde .noticias-subtitulo::after {
-  background: rgba(214, 230, 219, 0.25);
+.fondo-oscuro .noticias-subtitulo::before,
+.fondo-oscuro .noticias-subtitulo::after {
+  background: rgba(255, 255, 255, 0.18);
 }
 
-.fondo-verde .boton-noticias {
+.fondo-oscuro .boton-noticias {
   background-color: var(--dorado);
   color: var(--dorado-texto);
   border-color: transparent;
 }
 
-.fondo-verde .boton-noticias:hover,
-.fondo-verde .boton-noticias:focus-visible {
+.fondo-oscuro .boton-noticias:hover,
+.fondo-oscuro .boton-noticias:focus-visible {
   background-color: transparent;
   color: var(--dorado);
   border-color: var(--dorado);
