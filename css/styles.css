@@ -1388,6 +1388,200 @@ a.dato-contacto:focus {
   opacity: 1;
 }
 
+/* PANEL DE ADMINISTRACIÓN */
+
+/* Encabezado: título + botón de logout en la misma fila */
+.admin-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Botón de cerrar sesión */
+.boton-cerrar-sesion {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--verde-pino);
+  background: transparent;
+  border: 1.5px solid var(--verde-pino);
+  border-radius: var(--radio-elem);
+  padding: 0.5rem 1.1rem;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.boton-cerrar-sesion:hover {
+  background-color: var(--verde-pino);
+  color: var(--crema);
+}
+
+/* Indica que el ADM está activo (está en el panel) */
+.activo-adm {
+  color: var(--dorado) !important;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* Panel del formulario add/edit */
+.panel-admin {
+  background-color: #fff;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: 0 2px 14px rgba(31, 77, 58, 0.09);
+  padding: 2rem 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Oculta el panel del formulario */
+.oculto-admin { display: none !important; }
+
+/* Título dentro del panel del formulario */
+.admin-titulo-form {
+  font-size: 1.2rem;
+  color: var(--verde-pino);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--crema-medio);
+}
+
+/* Botón cancelar (dentro del formulario) */
+.boton-admin-cancelar {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  background: transparent;
+  border: 1.5px solid #bbb;
+  border-radius: var(--radio-elem);
+  padding: 0.65rem 1.25rem;
+  transition: border-color 0.15s;
+}
+
+.boton-admin-cancelar:hover {
+  border-color: #888;
+  color: #333;
+}
+
+/* Lista de noticias en el panel */
+.tabla-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Fila de cada noticia */
+.fila-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff;
+  border: 1.5px solid var(--crema-medio);
+  border-radius: var(--radio-elem);
+  padding: 0.9rem 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Parte izquierda: categoría, título, fecha */
+.fila-admin-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.fila-admin-titulo {
+  font-size: 0.95rem;
+  color: var(--carbon);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fila-admin-fecha {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Botones editar / eliminar */
+.fila-admin-acciones {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.boton-editar {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--verde-pino);
+  background: transparent;
+  border: 1.5px solid var(--verde-pino);
+  border-radius: var(--radio-elem);
+  padding: 0.3rem 0.75rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.boton-editar:hover {
+  background-color: var(--verde-pino);
+  color: #fff;
+}
+
+.boton-eliminar {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #A32D2D;
+  background: transparent;
+  border: 1.5px solid #A32D2D;
+  border-radius: var(--radio-elem);
+  padding: 0.3rem 0.75rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.boton-eliminar:hover {
+  background-color: #A32D2D;
+  color: #fff;
+}
+
+/* Estado vacío */
+.admin-vacio {
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Sección para restaurar noticias */
+.admin-restaurar {
+  border-top: 1px solid var(--crema-medio);
+  padding-top: 2rem;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.boton-admin-restaurar {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #777;
+  background: transparent;
+  border: 1.5px solid #bbb;
+  border-radius: var(--radio-elem);
+  padding: 0.5rem 1.25rem;
+  margin-top: 0.5rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.boton-admin-restaurar:hover {
+  border-color: #888;
+  color: #444;
+}
+
 /* RESPONSIVE — MENÚ MOBILE (< 992 px) */
 @media (max-width: 991.98px) {
 

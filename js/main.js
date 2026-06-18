@@ -131,30 +131,4 @@ document.getElementById('boton-siguiente').addEventListener('click', function ()
   if (temaActual < temas.length - 1) { mostrarDetalle(++temaActual); }
 });
 
-// login
-document.getElementById('boton-ver-contrasena').addEventListener('click', function () {
-  var campo        = document.getElementById('campo-contrasena');
-  var iconoOjo     = document.getElementById('icono-ojo');
-  var iconoCerrado = document.getElementById('icono-ojo-cerrado');
-  var mostrar      = campo.type === 'password';
-
-  campo.type          = mostrar ? 'text' : 'password';
-  iconoOjo.hidden     = mostrar;
-  iconoCerrado.hidden = !mostrar;
-  this.setAttribute('aria-label', mostrar ? 'Ocultar contraseña' : 'Mostrar contraseña');
-  this.setAttribute('aria-pressed', mostrar ? 'true' : 'false');
-});
-
-// formulario desactivado (maqueta sin backend)
-document.getElementById('formulario-login').addEventListener('submit', function (e) {
-  e.preventDefault();
-});
-
-// limpiar el formulario al abrir el modal
-document.getElementById('modal-login').addEventListener('show.bs.modal', function () {
-  document.getElementById('formulario-login').reset();
-  document.getElementById('error-login').hidden       = true;
-  document.getElementById('campo-contrasena').type    = 'password';
-  document.getElementById('icono-ojo').hidden         = false;
-  document.getElementById('icono-ojo-cerrado').hidden = true;
-});
+// el login lo maneja login.js (compartido con todas las páginas)

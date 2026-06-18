@@ -80,3 +80,9 @@ var noticias = [
       '<p>"Esta fiesta es nuestra manera de decir gracias: a las familias que confían en nosotros, a los chicos que se esfuerzan y a todo el equipo que hace posible esta escuela", dijo la directora en su discurso de cierre.</p>'
   }
 ];
+
+// Si el admin guardó cambios, usar esos datos en lugar de los de arriba
+if (localStorage.getItem('noticias')) {
+  try { noticias = JSON.parse(localStorage.getItem('noticias')); }
+  catch (e) { localStorage.removeItem('noticias'); }
+}

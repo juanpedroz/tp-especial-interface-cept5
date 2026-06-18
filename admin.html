@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrador | CEPT N° 5 de Miranda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- header -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top" id="menu-principal" aria-label="Navegación principal">
+      <div class="container">
+
+        <a class="navbar-brand logo" href="index.html">
+          <img src="img/img_logo.jpeg" alt="Logo CEPT N° 5 de Miranda" class="logo-img" />
+          <span class="logo-sigla">CEPT</span>
+          <span class="logo-numero">N° 5</span>
+        </a>
+
+        <button
+          class="navbar-toggler boton-menu"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#contenido-menu"
+          aria-controls="contenido-menu"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="contenido-menu">
+          <ul class="navbar-nav mx-auto gap-1">
+            <li class="nav-item">
+              <a class="nav-link enlace-menu" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-menu" href="index.html#quienes">Quiénes somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-menu" href="noticias.html">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-menu" href="index.html#contacto">Contacto</a>
+            </li>
+          </ul>
+
+          <div class="vr d-none d-lg-block mx-3 separador" aria-hidden="true"></div>
+          <hr class="d-lg-none separador-movil" aria-hidden="true" />
+
+          <span class="nav-link enlace-adm activo-adm">ADM</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- panel de administración -->
+  <main>
+    <section class="seccion">
+      <div class="container">
+
+        <!-- encabezado con título y botón de logout -->
+        <div class="admin-encabezado">
+          <div>
+            <h1 class="titulo-seccion mb-1">Panel de administración</h1>
+            <p class="descripcion-seccion mb-0">
+              Desde acá podés agregar, editar y eliminar noticias.
+            </p>
+          </div>
+          <button id="btn-cerrar-sesion" class="btn boton-cerrar-sesion">Cerrar sesión</button>
+        </div>
+
+        <!-- botón para agregar nueva noticia -->
+        <button id="btn-agregar" class="btn boton-primario mb-4">+ Nueva noticia</button>
+
+        <!-- formulario (oculto hasta que se clickee agregar o editar) -->
+        <div id="panel-formulario" class="panel-admin oculto-admin">
+
+          <h2 id="titulo-formulario-admin" class="admin-titulo-form">Agregar noticia</h2>
+
+          <form id="formulario-admin" novalidate>
+            <input type="hidden" id="admin-id" />
+
+            <div class="campo">
+              <label for="admin-titulo">Título</label>
+              <input
+                type="text"
+                id="admin-titulo"
+                required
+                placeholder="Ej: Jornada de siembra con alumnos de 3° año"
+              />
+              <span id="error-admin-titulo" class="error" aria-live="polite"></span>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <div class="campo">
+                  <label for="admin-categoria">Categoría</label>
+                  <select id="admin-categoria" required>
+                    <option value="" disabled selected>Elegí una categoría</option>
+                    <option value="Comunidad">Comunidad</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Proyectos">Proyectos</option>
+                    <option value="Producción">Producción</option>
+                    <option value="Eventos">Eventos</option>
+                    <option value="Institucional">Institucional</option>
+                  </select>
+                  <span id="error-admin-categoria" class="error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="campo">
+                  <label for="admin-fecha">Fecha</label>
+                  <input type="date" id="admin-fecha" required />
+                  <span id="error-admin-fecha" class="error" aria-live="polite"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="admin-foto">
+                Foto
+                <span class="opcional">(ruta desde la carpeta raíz, ej: img/mi-foto.jpeg)</span>
+              </label>
+              <input type="text" id="admin-foto" placeholder="img/nombre-de-la-foto.jpeg" />
+            </div>
+
+            <div class="campo">
+              <label for="admin-alt">
+                Descripción de la foto
+                <span class="opcional">(para personas que no pueden ver la imagen)</span>
+              </label>
+              <input
+                type="text"
+                id="admin-alt"
+                placeholder="Ej: Estudiantes trabajando en el invernáculo"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="admin-bajada">
+                Bajada
+                <span class="opcional">(resumen corto que aparece en la lista de noticias)</span>
+              </label>
+              <textarea
+                id="admin-bajada"
+                rows="2"
+                placeholder="Resumen de la noticia en 1 o 2 oraciones..."
+              ></textarea>
+            </div>
+
+            <div class="campo">
+              <label for="admin-cuerpo">
+                Cuerpo de la noticia
+                <span class="opcional">
+                  — usá etiquetas HTML: &lt;p&gt;párrafo&lt;/p&gt;,
+                  &lt;strong&gt;negrita&lt;/strong&gt;,
+                  &lt;ul&gt;&lt;li&gt;ítem&lt;/li&gt;&lt;/ul&gt;
+                </span>
+              </label>
+              <textarea
+                id="admin-cuerpo"
+                rows="8"
+                required
+                placeholder="&lt;p&gt;Primer párrafo...&lt;/p&gt;
+&lt;p&gt;Segundo párrafo...&lt;/p&gt;"
+              ></textarea>
+              <span id="error-admin-cuerpo" class="error" aria-live="polite"></span>
+            </div>
+
+            <div class="d-flex gap-3 flex-wrap mt-3">
+              <button type="submit" class="btn boton-primario">Guardar noticia</button>
+              <button type="button" id="btn-cancelar" class="btn boton-admin-cancelar">Cancelar</button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- lista de todas las noticias -->
+        <div id="lista-admin"></div>
+
+        <!-- sección para restaurar los datos originales -->
+        <div class="admin-restaurar">
+          <p>¿Borraste algo por error?</p>
+          <button id="btn-restaurar" class="btn boton-admin-restaurar">
+            Restaurar noticias originales
+          </button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer id="pie-pagina">
+    <div class="container">
+      <div class="row pie-fila-superior">
+
+        <div class="col-12 col-md-4 pie-col">
+          <a href="index.html" class="pie-logo">
+            <img src="img/img_logo.jpeg" alt="Logo CEPT N° 5 de Miranda" class="logo-img logo-img-pie" />
+            <span class="pie-logo-sigla">CEPT</span>
+            <span class="pie-logo-numero">N° 5</span>
+          </a>
+          <p class="pie-descripcion">
+            C.E.P.T. N° 5 · Miranda, Rauch, Buenos Aires<br>
+            Técnico en Producción Agropecuaria · Pedagogía de la Alternancia<br>
+            ACEPT / FACEPT
+          </p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 pie-col">
+          <h4 class="pie-titulo-col">Navegación</h4>
+          <ul class="pie-lista">
+            <li><a href="index.html"          class="pie-enlace">Inicio</a></li>
+            <li><a href="index.html#quienes"  class="pie-enlace">Quiénes somos</a></li>
+            <li><a href="noticias.html"        class="pie-enlace">Noticias</a></li>
+            <li><a href="index.html#contacto" class="pie-enlace">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 pie-col">
+          <h4 class="pie-titulo-col">Institucional</h4>
+          <ul class="pie-lista">
+            <li><a href="#" class="pie-enlace">ACEPT</a></li>
+            <li><a href="#" class="pie-enlace">FACEPT</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pie-inferior">
+        <p class="pie-copy">© 2026 CEPT N° 5 de Miranda. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap.bundle.min.js"></script>
+  <script src="js/datos-noticias.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/login.js"></script>
+
+</body>
+</html>
