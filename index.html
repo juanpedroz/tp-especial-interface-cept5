@@ -259,119 +259,47 @@
         <span class="noticias-preview-texto">Últimas noticias</span>
       </div>
 
-      <!-- ── Carrusel: grupos de 3 noticias ── -->
+      <!-- ── Últimas 3 noticias (desktop) ── -->
 
-      <div class="contenedor-carrusel d-none d-md-block">
-        <div id="carrusel-noticias" class="carousel slide" data-bs-ride="false">
+      <div class="row g-4 d-none d-md-flex">
 
-          <div class="carousel-inner">
+        <div class="col-12 col-md-4">
+          <article class="noticia">
+            <img src="img/noticia-1.jpg" alt="Alumnos de 4° año sembrando trigo en el campo de la escuela" class="noticia-foto" />
+            <div class="noticia-cuerpo">
+              <time class="noticia-fecha" datetime="2026-05-15">15 de mayo de 2026</time>
+              <span class="noticia-categoria">Producción</span>
+              <h3 class="noticia-titulo">Jornada de siembra de trigo con alumnos de 4° año</h3>
+              <a href="noticia.html?id=noticia-1" class="noticia-enlace">Leer más →</a>
+            </div>
+          </article>
+        </div>
 
-            <!-- Slide 1: las 3 más recientes -->
-            <div class="carousel-item active">
-              <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <article class="noticia">
+            <img src="img/noticia-2.jpg" alt="Estudiantes de distintas escuelas agrarias reunidos en el CEPT" class="noticia-foto" />
+            <div class="noticia-cuerpo">
+              <time class="noticia-fecha" datetime="2026-04-10">10 de abril de 2026</time>
+              <span class="noticia-categoria">Institucional</span>
+              <h3 class="noticia-titulo">Intercambio con escuelas agrarias de la provincia</h3>
+              <a href="noticia.html?id=noticia-2" class="noticia-enlace">Leer más →</a>
+            </div>
+          </article>
+        </div>
 
-                <div class="col-12 col-md-4">
-                  <article class="noticia" data-id="noticia-1" data-categoria="Producción" data-fecha="2026-05-15" data-anio="2026">
-                    <img src="img/noticia-1.jpg" alt="Alumnos de 4° año sembrando trigo en el campo de la escuela" class="noticia-foto" />
-                    <div class="noticia-cuerpo">
-                      <time class="noticia-fecha" datetime="2026-05-15">15 de mayo de 2026</time>
-                      <span class="noticia-categoria">Producción</span>
-                      <h3 class="noticia-titulo">Jornada de siembra de trigo con alumnos de 4° año</h3>
-                      <a href="noticia.html?id=noticia-1" class="noticia-enlace">Leer más →</a>
-                    </div>
-                  </article>
-                </div>
+        <div class="col-12 col-md-4">
+          <article class="noticia">
+            <img src="img/noticia-3.jpg" alt="Acto de colación de grados de los egresados 2025" class="noticia-foto" />
+            <div class="noticia-cuerpo">
+              <time class="noticia-fecha" datetime="2026-03-28">28 de marzo de 2026</time>
+              <span class="noticia-categoria">Egresados</span>
+              <h3 class="noticia-titulo">Acto de colación de grados: egresados 2025</h3>
+              <a href="noticia.html?id=noticia-3" class="noticia-enlace">Leer más →</a>
+            </div>
+          </article>
+        </div>
 
-                <div class="col-12 col-md-4">
-                  <article class="noticia" data-id="noticia-2" data-categoria="Institucional" data-fecha="2026-04-10" data-anio="2026">
-                    <img src="img/noticia-2.jpg" alt="Estudiantes de distintas escuelas agrarias reunidos en el CEPT" class="noticia-foto" />
-                    <div class="noticia-cuerpo">
-                      <time class="noticia-fecha" datetime="2026-04-10">10 de abril de 2026</time>
-                      <span class="noticia-categoria">Institucional</span>
-                      <h3 class="noticia-titulo">Intercambio con escuelas agrarias de la provincia</h3>
-                      <a href="noticia.html?id=noticia-2" class="noticia-enlace">Leer más →</a>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-4">
-                  <article class="noticia" data-id="noticia-3" data-categoria="Egresados" data-fecha="2026-03-28" data-anio="2026">
-                    <img src="img/noticia-3.jpg" alt="Acto de colación de grados de los egresados 2025" class="noticia-foto" />
-                    <div class="noticia-cuerpo">
-                      <time class="noticia-fecha" datetime="2026-03-28">28 de marzo de 2026</time>
-                      <span class="noticia-categoria">Egresados</span>
-                      <h3 class="noticia-titulo">Acto de colación de grados: egresados 2025</h3>
-                      <a href="noticia.html?id=noticia-3" class="noticia-enlace">Leer más →</a>
-                    </div>
-                  </article>
-                </div>
-
-              </div><!-- /row -->
-            </div><!-- /carousel-item 1 -->
-
-            <!-- Slide 2: las siguientes 3 -->
-            <div class="carousel-item">
-              <div class="row g-4">
-
-                <div class="col-12 col-md-4">
-                  <article class="noticia" data-id="noticia-4" data-categoria="Talleres" data-fecha="2026-02-14" data-anio="2026">
-                    <img src="img/noticia-4.jpg" alt="Alumnos trabajando con colmenas en el taller de apicultura" class="noticia-foto" />
-                    <div class="noticia-cuerpo">
-                      <time class="noticia-fecha" datetime="2026-02-14">14 de febrero de 2026</time>
-                      <span class="noticia-categoria">Talleres</span>
-                      <h3 class="noticia-titulo">Taller de apicultura y producción de miel</h3>
-                      <a href="noticia.html?id=noticia-4" class="noticia-enlace">Leer más →</a>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-4">
-                  <article class="noticia" data-id="noticia-5" data-categoria="Institucional" data-fecha="2026-01-20" data-anio="2026">
-                    <img src="img/noticia-5.jpg" alt="Acto de inicio del ciclo lectivo 2026 en el CEPT" class="noticia-foto" />
-                    <div class="noticia-cuerpo">
-                      <time class="noticia-fecha" datetime="2026-01-20">20 de enero de 2026</time>
-                      <span class="noticia-categoria">Institucional</span>
-                      <h3 class="noticia-titulo">Inicio del ciclo lectivo 2026</h3>
-                      <a href="noticia.html?id=noticia-5" class="noticia-enlace">Leer más →</a>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="col-12 col-md-4">
-                  <article class="noticia" data-id="noticia-6" data-categoria="Convivencia" data-fecha="2025-12-12" data-anio="2025">
-                    <img src="img/noticia-6.jpg" alt="Fiesta de la cosecha: estudiantes y familias celebrando el cierre del año" class="noticia-foto" />
-                    <div class="noticia-cuerpo">
-                      <time class="noticia-fecha" datetime="2025-12-12">12 de diciembre de 2025</time>
-                      <span class="noticia-categoria">Convivencia</span>
-                      <h3 class="noticia-titulo">Cierre del año: fiesta de la cosecha</h3>
-                      <a href="noticia.html?id=noticia-6" class="noticia-enlace">Leer más →</a>
-                    </div>
-                  </article>
-                </div>
-
-              </div><!-- /row -->
-            </div><!-- /carousel-item 2 -->
-
-          </div><!-- /carousel-inner -->
-
-          <!-- Indicadores de página -->
-          <div class="carousel-indicators puntos-pagina">
-            <button type="button" data-bs-target="#carrusel-noticias" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Grupo de noticias 1"></button>
-            <button type="button" data-bs-target="#carrusel-noticias" data-bs-slide-to="1" aria-label="Grupo de noticias 2"></button>
-          </div>
-
-          <!-- Flechas anterior / siguiente -->
-          <button class="carousel-control-prev flecha-carrusel" type="button" data-bs-target="#carrusel-noticias" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Grupo anterior</span>
-          </button>
-          <button class="carousel-control-next flecha-carrusel" type="button" data-bs-target="#carrusel-noticias" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Grupo siguiente</span>
-          </button>
-
-        </div><!-- /carousel -->
-      </div><!-- /contenedor-carrusel -->
+      </div><!-- /row desktop -->
 
       <!-- Carrusel MOBILE: 1 noticia por vez (visible en < md) -->
       <div id="carrusel-mobile" class="carousel slide d-md-none mb-4" data-bs-ride="false">
@@ -414,52 +342,13 @@
             </article>
           </div>
 
-          <div class="carousel-item">
-            <article class="noticia" data-id="noticia-4" data-categoria="Talleres" data-fecha="2026-02-14" data-anio="2026">
-              <img src="img/noticia-4.jpg" alt="Alumnos trabajando con colmenas en el taller de apicultura" class="noticia-foto" />
-              <div class="noticia-cuerpo">
-                <time class="noticia-fecha" datetime="2026-02-14">14 de febrero de 2026</time>
-                <span class="noticia-categoria">Talleres</span>
-                <h3 class="noticia-titulo">Taller de apicultura y producción de miel</h3>
-                <a href="noticia.html?id=noticia-4" class="noticia-enlace">Leer más →</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="carousel-item">
-            <article class="noticia" data-id="noticia-5" data-categoria="Institucional" data-fecha="2026-01-20" data-anio="2026">
-              <img src="img/noticia-5.jpg" alt="Acto de inicio del ciclo lectivo 2026 en el CEPT" class="noticia-foto" />
-              <div class="noticia-cuerpo">
-                <time class="noticia-fecha" datetime="2026-01-20">20 de enero de 2026</time>
-                <span class="noticia-categoria">Institucional</span>
-                <h3 class="noticia-titulo">Inicio del ciclo lectivo 2026</h3>
-                <a href="noticia.html?id=noticia-5" class="noticia-enlace">Leer más →</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="carousel-item">
-            <article class="noticia" data-id="noticia-6" data-categoria="Convivencia" data-fecha="2025-12-12" data-anio="2025">
-              <img src="img/noticia-6.jpg" alt="Fiesta de la cosecha: estudiantes y familias celebrando el cierre del año" class="noticia-foto" />
-              <div class="noticia-cuerpo">
-                <time class="noticia-fecha" datetime="2025-12-12">12 de diciembre de 2025</time>
-                <span class="noticia-categoria">Convivencia</span>
-                <h3 class="noticia-titulo">Cierre del año: fiesta de la cosecha</h3>
-                <a href="noticia.html?id=noticia-6" class="noticia-enlace">Leer más →</a>
-              </div>
-            </article>
-          </div>
-
         </div><!-- /carousel-inner -->
 
-        <!-- Indicadores (6 puntos) -->
+        <!-- Indicadores (3 puntos) -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Noticia 1"></button>
           <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="1" aria-label="Noticia 2"></button>
           <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="2" aria-label="Noticia 3"></button>
-          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="3" aria-label="Noticia 4"></button>
-          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="4" aria-label="Noticia 5"></button>
-          <button type="button" data-bs-target="#carrusel-mobile" data-bs-slide-to="5" aria-label="Noticia 6"></button>
         </div>
 
         <!-- Flechas -->
