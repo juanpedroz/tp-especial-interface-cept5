@@ -7,7 +7,7 @@ var noticias = [
     categoria: 'Producción',
     fecha: '2026-05-15',
     fechaTexto: '15 de mayo de 2026',
-    foto: 'img/noticia-1.jpg',
+    foto: 'img/siembra_trigo.jpg',
     alt: 'Alumnos de 4° año sembrando trigo en el campo de la escuela',
     bajada: 'Los estudiantes de cuarto año llevaron adelante la siembra anual de trigo en el predio de la escuela, aplicando las técnicas trabajadas en clase y el conocimiento de sus familias productoras.',
     cuerpo: '<p>El pasado jueves, los alumnos de 4° año realizaron la jornada de siembra de trigo en el campo experimental del CEPT N° 5. La actividad, que forma parte del plan de estudios del área de Producción Vegetal, permitió a los jóvenes poner en práctica los contenidos trabajados durante el primer cuatrimestre.</p>' +
@@ -20,7 +20,7 @@ var noticias = [
     categoria: 'Institucional',
     fecha: '2026-04-10',
     fechaTexto: '10 de abril de 2026',
-    foto: 'img/noticia-2.jpg',
+    foto: 'img/intercambio_alumnos.jpg',
     alt: 'Estudiantes de distintas escuelas agrarias reunidos en el CEPT',
     bajada: 'El CEPT N° 5 recibió la visita de alumnos y docentes de tres escuelas agrarias de la provincia de Buenos Aires en el marco de un encuentro de intercambio organizado por la FACEPT.',
     cuerpo: '<p>Durante dos días, el CEPT N° 5 de Miranda fue sede de un encuentro interprovincial de escuelas con Pedagogía de la Alternancia. Participaron instituciones de Olavarría, Tandil y Mar del Plata, compartiendo experiencias de producción y metodologías pedagógicas.</p>' +
@@ -33,7 +33,7 @@ var noticias = [
     categoria: 'Egresados',
     fecha: '2026-03-28',
     fechaTexto: '28 de marzo de 2026',
-    foto: 'img/noticia-3.jpg',
+    foto: 'img/acto_egresados.jpg',
     alt: 'Acto de colación de grados de los egresados 2025',
     bajada: 'Con la presencia de familias, docentes y autoridades locales, el CEPT N° 5 celebró la colación de grados de su promoción 2025: doce nuevos técnicos agropecuarios que se suman a la comunidad de egresados.',
     cuerpo: '<p>El sábado 28 de marzo se realizó el acto de colación de grados de la promoción 2025 del CEPT N° 5 de Miranda. Doce jóvenes recibieron su título de Técnico en Producción Agropecuaria ante una sala colmada de familias, exalumnos, docentes y autoridades municipales.</p>' +
@@ -46,7 +46,7 @@ var noticias = [
     categoria: 'Talleres',
     fecha: '2026-02-14',
     fechaTexto: '14 de febrero de 2026',
-    foto: 'img/noticia-4.jpg',
+    foto: 'img/taller_apicultura.jpg',
     alt: 'Alumnos trabajando con colmenas en el taller de apicultura',
     bajada: 'Estudiantes de segundo y tercer año participaron de un taller intensivo de apicultura a cargo de un productor local, como parte de la ampliación de la propuesta de producción diversificada de la escuela.',
     cuerpo: '<p>Durante tres jornadas, los alumnos de 2° y 3° año aprendieron los fundamentos de la apicultura: manejo de colmenas, ciclo de vida de las abejas, extracción y envasado de miel. El taller fue coordinado por el señor Marcos T., apicultor de la zona con más de veinte años de experiencia.</p>' +
@@ -59,7 +59,7 @@ var noticias = [
     categoria: 'Institucional',
     fecha: '2026-01-20',
     fechaTexto: '20 de enero de 2026',
-    foto: 'img/noticia-5.jpg',
+    foto: 'img/inicio_ciclo.jpg',
     alt: 'Acto de inicio del ciclo lectivo 2026 en el CEPT',
     bajada: 'Con un acto sencillo y emotivo, el CEPT N° 5 dio la bienvenida a los 48 alumnos que conforman la matrícula 2026, incluyendo catorce ingresantes de primer año provenientes de ocho localidades del partido de Rauch.',
     cuerpo: '<p>El lunes 20 de enero comenzó el ciclo lectivo 2026 en el CEPT N° 5 de Miranda. El acto de apertura reunió a todos los estudiantes, sus familias y el plantel docente en el patio de la escuela, bajo un sol de mañana templada.</p>' +
@@ -72,7 +72,7 @@ var noticias = [
     categoria: 'Convivencia',
     fecha: '2025-12-12',
     fechaTexto: '12 de diciembre de 2025',
-    foto: 'img/noticia-6.jpg',
+    foto: 'img/fiesta_cosecha.jpg',
     alt: 'Estudiantes y familias celebrando la fiesta de la cosecha',
     bajada: 'La tradicional fiesta de la cosecha reunió a más de doscientas personas entre alumnos, familias y exalumnos para celebrar el cierre de un año de mucho trabajo y crecimiento colectivo.',
     cuerpo: '<p>El sábado 12 de diciembre, el CEPT N° 5 vivió su tradicional fiesta de la cosecha, el evento que cada año cierra el ciclo lectivo y reúne a toda la comunidad educativa. Más de doscientas personas —alumnos, familias, docentes y exalumnos— compartieron una jornada de festejos, música y comida.</p>' +
