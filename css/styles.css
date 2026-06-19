@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fondo-oscuro {
-  background-color: #344A24;
+  background-color: #363028;
 }
 
 /* Overrides de texto y elementos para sección oscura */
@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .fondo-oscuro .noticias-subtitulo::before,
 .fondo-oscuro .noticias-subtitulo::after {
-  background: rgba(214, 230, 219, 0.35);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .fondo-oscuro .boton-noticias {
