@@ -25,4 +25,30 @@ if (!noticia) {
   document.getElementById('articulo-categoria').textContent = noticia.categoria;
   document.getElementById('articulo-bajada').textContent    = noticia.bajada;
   document.getElementById('articulo-cuerpo').innerHTML      = noticia.cuerpo;
+
+  var url  = window.location.href;
+  var texto = noticia.titulo;
+
+  // Botón nativo (mobile: abre menú del sistema)
+  var btnNativo = document.getElementById('btn-compartir-nativo');
+  if (navigator.share) {
+    btnNativo.addEventListener('click', function () {
+      navigator.share({ title: texto, text: noticia.bajada, url: url });
+    });
+  } else {
+    btnNativo.hidden = true;
+  }
+
+  // WhatsApp
+  document.getElementById('btn-compartir-whatsapp').href =
+    'https://wa.me/?text=' + encodeURIComponent(texto + '\n' + url);
+
+  // Copiar enlace
+  var btnCopiar = document.getElementById('btn-copiar-enlace');
+  btnCopiar.addEventListener('click', function () {
+    navigator.clipboard.writeText(url).then(function () {
+      btnCopiar.textContent = '¡Enlace copiado!';
+      setTimeout(function () { btnCopiar.textContent = 'Copiar enlace'; }, 2500);
+    });
+  });
 }

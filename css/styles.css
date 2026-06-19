@@ -511,6 +511,62 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
+/* COMPARTIR */
+.articulo-compartir {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--crema-medio);
+  border-bottom: 1px solid var(--crema-medio);
+  margin-bottom: 2rem;
+}
+
+.compartir-etiqueta {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--carbon);
+  white-space: nowrap;
+}
+
+.compartir-botones {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.compartir-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radio-elem);
+  border: 1.5px solid var(--crema-medio);
+  background: #fff;
+  color: var(--carbon);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.compartir-btn:hover,
+.compartir-btn:focus {
+  border-color: var(--verde-claro);
+  color: var(--verde-pino);
+  background: var(--crema);
+}
+
+.compartir-btn-wa:hover,
+.compartir-btn-wa:focus {
+  border-color: #25d366;
+  color: #128c50;
+  background: #f0fdf4;
+}
+
 /* Botón "← Volver" */
 .boton-volver {
   background: none;
