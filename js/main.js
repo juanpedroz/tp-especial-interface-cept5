@@ -132,3 +132,24 @@ document.getElementById('boton-siguiente').addEventListener('click', function ()
 });
 
 // el login lo maneja login.js (compartido con todas las páginas)
+
+// noticias recientes en el inicio (las 3 más nuevas del array)
+(function () {
+  var contenedor = document.getElementById('noticias-inicio');
+  if (!contenedor || typeof noticias === 'undefined') return;
+
+  var recientes = noticias.slice(0, 3);
+  contenedor.innerHTML = recientes.map(function (n) {
+    return '<div class="col-12 col-md-4">' +
+      '<article class="noticia">' +
+        '<img src="' + n.foto + '" alt="' + n.alt + '" class="noticia-foto" />' +
+        '<div class="noticia-cuerpo">' +
+          '<time class="noticia-fecha" datetime="' + n.fecha + '">' + n.fechaTexto + '</time>' +
+          '<span class="noticia-categoria">' + n.categoria + '</span>' +
+          '<h3 class="noticia-titulo">' + n.titulo + '</h3>' +
+          '<a href="noticia.html?id=' + n.id + '" class="noticia-enlace">Leer más →</a>' +
+        '</div>' +
+      '</article>' +
+    '</div>';
+  }).join('');
+}());
