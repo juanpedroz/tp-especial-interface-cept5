@@ -1367,6 +1367,12 @@ a.dato-contacto:focus {
   opacity: 1;
 }
 
+.pie-enlace-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 /* ADM discreto */
 .pie-adm {
   font-size: 0.78rem;
