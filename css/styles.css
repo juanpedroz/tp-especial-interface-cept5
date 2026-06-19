@@ -1101,6 +1101,26 @@ a.dato-contacto:focus {
   color: #6b6b66;
 }
 
+/* Texto de ayuda debajo del campo */
+.campo-ayuda {
+  font-size: 0.82rem;
+  color: #6b6b66;
+  line-height: 1.5;
+  margin-top: 0.35rem;
+}
+
+.campo-ayuda code {
+  background-color: #f0ede6;
+  padding: 0.05em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: var(--verde-pino);
+}
+
+.campo-ayuda em {
+  color: #888;
+}
+
 /* Campos del formulario */
 .campo input,
 .campo select,

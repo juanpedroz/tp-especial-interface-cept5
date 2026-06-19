@@ -133,15 +133,15 @@
             <div class="campo">
               <label for="admin-foto">
                 Foto
-                <span class="opcional">(ruta desde la carpeta raíz, ej: img/mi-foto.jpeg)</span>
+                <span class="opcional">(opcional)</span>
               </label>
-              <input type="text" id="admin-foto" placeholder="img/nombre-de-la-foto.jpeg" />
+              <input type="text" id="admin-foto" placeholder="img/nombre-del-archivo.jpeg" />
             </div>
 
             <div class="campo">
               <label for="admin-alt">
                 Descripción de la foto
-                <span class="opcional">(para personas que no pueden ver la imagen)</span>
+                <span class="opcional">(opcional)</span>
               </label>
               <input
                 type="text"
@@ -152,31 +152,25 @@
 
             <div class="campo">
               <label for="admin-bajada">
-                Bajada
-                <span class="opcional">(resumen corto que aparece en la lista de noticias)</span>
+                Resumen
+                <span class="opcional">(opcional)</span>
               </label>
               <textarea
                 id="admin-bajada"
                 rows="2"
-                placeholder="Resumen de la noticia en 1 o 2 oraciones..."
+                placeholder="Escribí 1 o 2 oraciones que resuman la noticia..."
               ></textarea>
             </div>
 
             <div class="campo">
               <label for="admin-cuerpo">
-                Cuerpo de la noticia
-                <span class="opcional">
-                  — usá etiquetas HTML: &lt;p&gt;párrafo&lt;/p&gt;,
-                  &lt;strong&gt;negrita&lt;/strong&gt;,
-                  &lt;ul&gt;&lt;li&gt;ítem&lt;/li&gt;&lt;/ul&gt;
-                </span>
+                Texto de la noticia
               </label>
               <textarea
                 id="admin-cuerpo"
                 rows="8"
                 required
-                placeholder="&lt;p&gt;Primer párrafo...&lt;/p&gt;
-&lt;p&gt;Segundo párrafo...&lt;/p&gt;"
+                placeholder="Escribí acá el texto completo de la noticia..."
               ></textarea>
               <span id="error-admin-cuerpo" class="error" aria-live="polite"></span>
             </div>
