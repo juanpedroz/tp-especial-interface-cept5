@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fondo-oscuro {
-  background-color: var(--verde-claro);
+  background-color: #344A24;
 }
 
 /* Overrides de texto y elementos para sección oscura */
