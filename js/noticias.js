@@ -1,4 +1,4 @@
-// noticias.js — página de listado y búsqueda de noticias
+// página de listado y búsqueda de noticias
 
 function crearTarjeta(n) {
   return '<div class="col-12 col-md-4">' +
@@ -15,8 +15,8 @@ function crearTarjeta(n) {
 }
 
 function renderizar(lista) {
-  var grilla = document.getElementById('grilla-noticias');
-  var vacio  = document.getElementById('sin-resultados');
+  let grilla = document.getElementById('grilla-noticias');
+  let vacio  = document.getElementById('sin-resultados');
 
   if (lista.length === 0) {
     grilla.innerHTML = '';
@@ -28,15 +28,15 @@ function renderizar(lista) {
 }
 
 function filtrar() {
-  var texto = document.getElementById('campo-busqueda').value.trim().toLowerCase();
-  var anio  = document.getElementById('filtro-anio').value;
+  let texto = document.getElementById('campo-busqueda').value.trim().toLowerCase();
+  let anio  = document.getElementById('filtro-anio').value;
 
-  var resultado = noticias.filter(function (n) {
-    var coincideTexto = !texto ||
+  let resultado = noticias.filter(function (n) {
+    let coincideTexto = !texto ||
       n.titulo.toLowerCase().indexOf(texto) !== -1 ||
       n.bajada.toLowerCase().indexOf(texto) !== -1 ||
       n.cuerpo.toLowerCase().indexOf(texto) !== -1;
-    var coincideAnio = !anio || n.fecha.indexOf(anio) === 0;
+    let coincideAnio = !anio || n.fecha.indexOf(anio) === 0;
     return coincideTexto && coincideAnio;
   });
 

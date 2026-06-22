@@ -1,6 +1,6 @@
-// datos-noticias.js — array compartido entre noticias.html y noticia.html
+//array compartido entre noticias.html y noticia.html
 
-var noticias = [
+let noticias = [
   {
     id: 'noticia-1',
     titulo: 'Jornada de siembra de trigo con alumnos de 4° año',

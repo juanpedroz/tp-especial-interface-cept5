@@ -1,4 +1,3 @@
-// admin.js
 
 // Redirige al inicio si nadie inició sesión
 if (!sessionStorage.getItem('adminLogueado')) {
@@ -8,12 +7,12 @@ if (!sessionStorage.getItem('adminLogueado')) {
 // Cierra el menú móvil al tocar un enlace
 document.querySelectorAll('#contenido-menu .enlace-menu').forEach(function (enlace) {
   enlace.addEventListener('click', function () {
-    var menu = bootstrap.Collapse.getInstance(document.getElementById('contenido-menu'));
+    let menu = bootstrap.Collapse.getInstance(document.getElementById('contenido-menu'));
     if (menu) menu.hide();
   });
 });
 
-var meses = ['enero','febrero','marzo','abril','mayo','junio',
+const meses = ['enero','febrero','marzo','abril','mayo','junio',
              'julio','agosto','septiembre','octubre','noviembre','diciembre'];
 
 function guardarNoticias() {
@@ -25,7 +24,7 @@ function generarId() {
 }
 
 function fechaATexto(iso) {
-  var p = iso.split('-');
+  let p = iso.split('-');
   return parseInt(p[2], 10) + ' de ' + meses[parseInt(p[1], 10) - 1] + ' de ' + p[0];
 }
 
@@ -36,7 +35,7 @@ function abrirFormulario(id) {
   limpiarErrores();
 
   if (id) {
-    var n = noticias.find(function (x) { return x.id === id; });
+    let n = noticias.find(function (x) { return x.id === id; });
     document.getElementById('titulo-formulario-admin').textContent = 'Editar noticia';
     document.getElementById('admin-id').value        = n.id;
     document.getElementById('admin-titulo').value     = n.titulo;
@@ -51,7 +50,7 @@ function abrirFormulario(id) {
     document.getElementById('admin-id').value = '';
   }
 
-  var panel = document.getElementById('panel-formulario');
+  let panel = document.getElementById('panel-formulario');
   panel.classList.remove('oculto-admin');
   panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -75,7 +74,7 @@ function marcarError(campo, msg) {
 // Limpia el error de un campo cuando el usuario escribe
 ['admin-titulo', 'admin-categoria', 'admin-fecha', 'admin-cuerpo'].forEach(function (id) {
   document.getElementById(id).addEventListener('input', function () {
-    var campo = id.replace('admin-', '');
+    let campo = id.replace('admin-', '');
     document.getElementById('error-admin-' + campo).textContent = '';
     this.classList.remove('invalido');
   });
@@ -90,23 +89,23 @@ document.getElementById('btn-cancelar').addEventListener('click', cerrarFormular
 document.getElementById('formulario-admin').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  var id        = document.getElementById('admin-id').value;
-  var titulo    = document.getElementById('admin-titulo').value.trim();
-  var categoria = document.getElementById('admin-categoria').value;
-  var fecha     = document.getElementById('admin-fecha').value;
-  var foto      = document.getElementById('admin-foto').value.trim() || 'img/img_logo.jpeg';
-  var alt       = document.getElementById('admin-alt').value.trim() || titulo;
-  var bajada    = document.getElementById('admin-bajada').value.trim();
-  var cuerpo    = document.getElementById('admin-cuerpo').value.trim();
+  let id        = document.getElementById('admin-id').value;
+  let titulo    = document.getElementById('admin-titulo').value.trim();
+  let categoria = document.getElementById('admin-categoria').value;
+  let fecha     = document.getElementById('admin-fecha').value;
+  let foto      = document.getElementById('admin-foto').value.trim() || 'img/img_logo.jpeg';
+  let alt       = document.getElementById('admin-alt').value.trim() || titulo;
+  let bajada    = document.getElementById('admin-bajada').value.trim();
+  let cuerpo    = document.getElementById('admin-cuerpo').value.trim();
 
-  var hayError = false;
+  let hayError = false;
   if (!titulo)    { marcarError('titulo',    'El título es obligatorio.');    hayError = true; }
   if (!categoria) { marcarError('categoria', 'La categoría es obligatoria.'); hayError = true; }
   if (!fecha)     { marcarError('fecha',     'La fecha es obligatoria.');     hayError = true; }
   if (!cuerpo)    { marcarError('cuerpo',    'El cuerpo es obligatorio.');    hayError = true; }
   if (hayError) return;
 
-  var noticia = {
+  let noticia = {
     id:         id || generarId(),
     titulo:     titulo,
     categoria:  categoria,
@@ -119,7 +118,7 @@ document.getElementById('formulario-admin').addEventListener('submit', function 
   };
 
   if (id) {
-    var i = noticias.findIndex(function (n) { return n.id === id; });
+    let i = noticias.findIndex(function (n) { return n.id === id; });
     noticias[i] = noticia;
   } else {
     noticias.unshift(noticia); // la más nueva va primero
@@ -133,14 +132,14 @@ document.getElementById('formulario-admin').addEventListener('submit', function 
 // --- Lista de noticias ---
 
 function renderLista() {
-  var cont = document.getElementById('lista-admin');
+  let cont = document.getElementById('lista-admin');
 
   if (!noticias.length) {
     cont.innerHTML = '<p class="admin-vacio">No hay noticias cargadas todavía.</p>';
     return;
   }
 
-  var html = '<div class="tabla-admin">';
+  let html = '<div class="tabla-admin">';
   noticias.forEach(function (n) {
     html +=
       '<div class="fila-admin">' +
@@ -164,9 +163,9 @@ function renderLista() {
 
   cont.querySelectorAll('.boton-eliminar').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var tituloNoticia = this.closest('.fila-admin').querySelector('.fila-admin-titulo').textContent;
+      let tituloNoticia = this.closest('.fila-admin').querySelector('.fila-admin-titulo').textContent;
       if (!confirm('¿Eliminar "' + tituloNoticia + '"?')) return;
-      var id = this.dataset.id;
+      let id = this.dataset.id;
       noticias = noticias.filter(function (n) { return n.id !== id; });
       guardarNoticias();
       renderLista();

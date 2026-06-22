@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  var form         = document.getElementById('formulario-login');
-  var errorDiv     = document.getElementById('error-login');
-  var btnOjo       = document.getElementById('boton-ver-contrasena');
-  var campo        = document.getElementById('campo-contrasena');
-  var iconoOjo     = document.getElementById('icono-ojo');
-  var iconoCerrado = document.getElementById('icono-ojo-cerrado');
-  var modalEl      = document.getElementById('modal-login');
+  let form         = document.getElementById('formulario-login');
+  let errorDiv     = document.getElementById('error-login');
+  let btnOjo       = document.getElementById('boton-ver-contrasena');
+  let campo        = document.getElementById('campo-contrasena');
+  let iconoOjo     = document.getElementById('icono-ojo');
+  let iconoCerrado = document.getElementById('icono-ojo-cerrado');
+  let modalEl      = document.getElementById('modal-login');
 
   // Si la página no tiene el modal, no hacer nada
   if (!form || !modalEl) return;
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Envío del formulario: verifica credenciales
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var usuario    = document.getElementById('campo-usuario').value.trim();
-    var contrasena = campo.value;
+    let usuario    = document.getElementById('campo-usuario').value.trim();
+    let contrasena = campo.value;
 
     if (usuario === 'admin' && contrasena === 'cept2025') {
       sessionStorage.setItem('adminLogueado', 'true');
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Botón para mostrar/ocultar contraseña
   if (btnOjo) {
     btnOjo.addEventListener('click', function () {
-      var mostrar = campo.type === 'password';
+      let mostrar = campo.type === 'password';
       campo.type = mostrar ? 'text' : 'password';
       if (iconoOjo)     iconoOjo.hidden     = mostrar;
       if (iconoCerrado) iconoCerrado.hidden = !mostrar;

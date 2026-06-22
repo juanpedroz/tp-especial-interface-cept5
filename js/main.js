@@ -1,16 +1,15 @@
-// main.js
 
 // menú móvil: cierra al tocar un enlace
 document.querySelectorAll('#contenido-menu .enlace-menu').forEach(function (enlace) {
   enlace.addEventListener('click', function () {
-    var menu = document.getElementById('contenido-menu');
-    var instancia = bootstrap.Collapse.getInstance(menu);
+    let menu = document.getElementById('contenido-menu');
+    let instancia = bootstrap.Collapse.getInstance(menu);
     if (instancia) instancia.hide();
   });
 });
 
 // quiénes somos: detalle de cada tema
-var temas = [
+const temas = [
   {
     id: 'historia',
     titulo: 'Breve historia',
@@ -77,7 +76,7 @@ var temas = [
   }
 ];
 
-var temaActual = 0;
+let temaActual = 0;
 
 function abrirDetalle(idTema) {
   temaActual = temas.findIndex(function (t) { return t.id === idTema; });
@@ -85,7 +84,7 @@ function abrirDetalle(idTema) {
 }
 
 function mostrarDetalle(indice) {
-  var tema = temas[indice];
+  let tema = temas[indice];
 
   document.getElementById('detalle-foto').src    = tema.foto;
   document.getElementById('detalle-foto').alt    = tema.alt;
@@ -135,10 +134,10 @@ document.getElementById('boton-siguiente').addEventListener('click', function ()
 
 // noticias recientes en el inicio (las 3 más nuevas del array)
 (function () {
-  var contenedor = document.getElementById('noticias-inicio');
+  let contenedor = document.getElementById('noticias-inicio');
   if (!contenedor || typeof noticias === 'undefined') return;
 
-  var recientes = noticias.slice(0, 3);
+  let recientes = noticias.slice(0, 3);
   contenedor.innerHTML = recientes.map(function (n) {
     return '<div class="col-12 col-md-4">' +
       '<article class="noticia">' +
