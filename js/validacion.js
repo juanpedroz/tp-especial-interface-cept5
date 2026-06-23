@@ -14,7 +14,7 @@ function limpiarError(id) {
 
 // Revisa un campo y devuelve true si es válido, false si hay error
 function validarCampo(id) {
-  const valor = document.getElementById(id).value.trim();
+  let valor = document.getElementById(id).value.trim();
   let mensaje = '';
 
   if (id === 'nombre' && valor === '') {
@@ -22,7 +22,7 @@ function validarCampo(id) {
   }
 
   if (id === 'email') {
-    const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (valor === '') {
       mensaje = 'El correo electrónico es obligatorio.';
     } else if (!formatoEmail.test(valor)) {
@@ -32,7 +32,7 @@ function validarCampo(id) {
 
   if (id === 'telefono' && valor !== '') {
     // Solo permite dígitos, espacios y guiones
-    const formatoTel = /^[\d\s-]+$/;
+    let formatoTel = /^[\d\s-]+$/;
     if (!formatoTel.test(valor)) {
       mensaje = 'El teléfono solo puede contener números, espacios y guiones.';
     }
@@ -61,12 +61,12 @@ function validarCampo(id) {
 
 // Oculta el formulario y muestra el panel de confirmación
 function mostrarExito() {
-  const form         = document.getElementById('formulario');
-  const confirmacion = document.getElementById('confirmacion');
-  const campos       = ['nombre', 'email', 'telefono', 'asunto', 'mensaje'];
+  let form         = document.getElementById('formulario');
+  let confirmacion = document.getElementById('confirmacion');
+  let campos       = ['nombre', 'email', 'telefono', 'asunto', 'mensaje'];
 
   form.reset();
-  campos.forEach(id => limpiarError(id));
+  campos.forEach(function (id) { limpiarError(id); });
 
   form.classList.add('oculto');
   confirmacion.classList.remove('oculto');
@@ -74,29 +74,29 @@ function mostrarExito() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form   = document.getElementById('formulario');
-  const campos = ['nombre', 'email', 'telefono', 'asunto', 'mensaje'];
+document.addEventListener('DOMContentLoaded', function () {
+  let form   = document.getElementById('formulario');
+  let campos = ['nombre', 'email', 'telefono', 'asunto', 'mensaje'];
 
   // Valida un campo cuando el usuario sale de él
-  campos.forEach(id => {
-    document.getElementById(id).addEventListener('blur', () => validarCampo(id));
+  campos.forEach(function (id) {
+    document.getElementById(id).addEventListener('blur', function () { validarCampo(id); });
   });
 
   // Valida todo al presionar "Enviar consulta"
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     let hayErrores = false;
-    campos.forEach(id => {
+    campos.forEach(function (id) {
       if (!validarCampo(id)) hayErrores = true;
     });
 
     if (hayErrores) {
       // Mueve el foco al primer campo con error
-      const primero = campos.find(id =>
-        document.getElementById(id).classList.contains('invalido')
-      );
+      let primero = campos.find(function (id) {
+        return document.getElementById(id).classList.contains('invalido');
+      });
       if (primero) document.getElementById(primero).focus();
       return;
     }
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Vuelve al formulario al hacer clic en "Hacer otra consulta"
-  document.getElementById('btn-nueva').addEventListener('click', () => {
+  document.getElementById('btn-nueva').addEventListener('click', function () {
     document.getElementById('confirmacion').classList.add('oculto');
     form.classList.remove('oculto');
     document.getElementById('nombre').focus();

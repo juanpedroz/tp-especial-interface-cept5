@@ -1,6 +1,6 @@
 // login.js — maneja el modal de login en todas las páginas
 
-// usuario: admin | contraseña: cept2025
+// usuario admin, pass cept2025
 document.addEventListener('DOMContentLoaded', function () {
 
   // Si ya hay sesión activa, el botón ADM se convierte en "Cerrar sesión"

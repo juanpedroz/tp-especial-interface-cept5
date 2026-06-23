@@ -132,11 +132,9 @@ document.getElementById('boton-siguiente').addEventListener('click', function ()
 
 // el login lo maneja login.js (compartido con todas las páginas)
 
-// noticias recientes en el inicio (las 3 más nuevas del array)
-(function () {
-  let contenedor = document.getElementById('noticias-inicio');
-  if (!contenedor || typeof noticias === 'undefined') return;
-
+// noticias recientes en el inicio
+let contenedor = document.getElementById('noticias-inicio');
+if (contenedor && typeof noticias !== 'undefined') {
   let recientes = noticias.slice(0, 3);
   contenedor.innerHTML = recientes.map(function (n) {
     return '<div class="col-12 col-md-4">' +
@@ -151,4 +149,4 @@ document.getElementById('boton-siguiente').addEventListener('click', function ()
       '</article>' +
     '</div>';
   }).join('');
-}());
+}

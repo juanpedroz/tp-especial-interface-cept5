@@ -1,4 +1,4 @@
-//array compartido entre noticias.html y noticia.html
+// noticias de la escuela
 
 let noticias = [
   {
