@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Informe Técnico — CEPT N° 5 de Miranda</title>
+<style>
+  @page { margin: 2.5cm 3cm; }
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; line-height: 1.6; color: #111; max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  h1 { font-size: 20pt; color: #1a3a1a; border-bottom: 3px solid #4a7c59; padding-bottom: 8px; margin-top: 40px; }
+  h2 { font-size: 14pt; color: #2e5e3e; margin-top: 30px; border-left: 4px solid #4a7c59; padding-left: 10px; }
+  h3 { font-size: 11pt; color: #333; margin-top: 20px; font-style: italic; }
+  p  { margin: 8px 0 12px 0; text-align: justify; }
+  ul { margin: 6px 0 14px 20px; }
+  li { margin-bottom: 6px; }
+  .portada { text-align: center; padding: 60px 0 40px; border-bottom: 2px solid #4a7c59; margin-bottom: 40px; }
+  .portada h1 { border: none; font-size: 24pt; }
+  .portada .subtitulo { font-size: 13pt; color: #555; margin-top: 10px; }
+  .portada .meta { font-size: 10pt; color: #888; margin-top: 20px; }
+  .indice { background: #f4f8f5; border: 1px solid #c5dcc9; border-radius: 6px; padding: 20px 30px; margin: 30px 0; }
+  .indice h2 { border: none; color: #1a3a1a; margin-top: 0; padding-left: 0; font-size: 12pt; }
+  .indice ol { margin: 0; padding-left: 20px; }
+  .indice li { margin-bottom: 4px; }
+  .indice a { color: #2e5e3e; text-decoration: none; }
+  .indice a:hover { text-decoration: underline; }
+  .nota { background: #fffbea; border-left: 4px solid #d4a017; padding: 10px 16px; margin: 16px 0; font-size: 10pt; }
+  code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-family: Consolas, monospace; font-size: 10pt; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 10pt; }
+  th { background: #2e5e3e; color: #fff; padding: 8px 12px; text-align: left; }
+  td { padding: 7px 12px; border-bottom: 1px solid #ddd; }
+  tr:nth-child(even) td { background: #f7faf8; }
+  @media print { body { padding: 0; } }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="portada">
+  <h1>Informe Técnico<br>Sitio Web CEPT N° 5 de Miranda</h1>
+  <p class="subtitulo">Trabajo Práctico Integrador<br>Tecnología Universitaria en Desarrollo de Aplicaciones Informáticas (TUDAI)</p>
+  <p class="meta">Autor: Manuel Dualde &nbsp;|&nbsp; Junio 2026</p>
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h2>Índice</h2>
+  <ol>
+    <li><a href="#sec1">Disposición de elementos y justificación UX / UI / IXD</a>
+      <ol>
+        <li><a href="#s11">Barra de navegación (Navbar)</a></li>
+        <li><a href="#s12">Sección Hero / Portada</a></li>
+        <li><a href="#s13">Sección Quiénes somos</a></li>
+        <li><a href="#s14">Sección Noticias</a></li>
+        <li><a href="#s15">Sección Contacto</a></li>
+        <li><a href="#s16">Footer (Pie de página)</a></li>
+        <li><a href="#s17">Página de Noticias</a></li>
+        <li><a href="#s18">Página de Artículo Individual</a></li>
+        <li><a href="#s19">Panel de Administración</a></li>
+      </ol>
+    </li>
+    <li><a href="#sec2">Funciones JavaScript — descripción y funcionamiento</a>
+      <ol>
+        <li><a href="#s21">datos-noticias.js</a></li>
+        <li><a href="#s22">main.js</a></li>
+        <li><a href="#s23">login.js</a></li>
+        <li><a href="#s24">validacion.js</a></li>
+        <li><a href="#s25">noticias.js</a></li>
+        <li><a href="#s26">noticia.js</a></li>
+        <li><a href="#s27">admin.js</a></li>
+      </ol>
+    </li>
+    <li><a href="#sec3">Tecnologías y herramientas utilizadas</a></li>
+  </ol>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<h1 id="sec1">1. Disposición de Elementos — Justificación UX / UI / IXD</h1>
+
+<p>El diseño de la interfaz se basó en principios reconocidos de experiencia de usuario (UX), diseño de interfaz (UI) y diseño de interacción (IXD). Cada decisión de layout tiene una razón funcional o perceptiva que se detalla a continuación.</p>
+
+<!-- 1.1 -->
+<h2 id="s11">1.1 Barra de navegación (Navbar)</h2>
+
+<p>La barra de navegación está fija en la parte superior de la pantalla (<code>position: fixed</code>). Esto responde al principio de <strong>visibilidad permanente</strong>: el usuario siempre puede ver dónde está y navegar a otra sección sin necesidad de hacer scroll hacia arriba, reduciendo la carga cognitiva y el tiempo de orientación.</p>
+
+<ul>
+  <li><strong>Logo a la izquierda:</strong> respeta el patrón de lectura en F y establece la identidad de marca desde el primer punto de fijación visual. Es el primer elemento que el ojo encuentra al recorrer la barra de izquierda a derecha.</li>
+  <li><strong>Menú centrado con cuatro ítems:</strong> la cantidad reducida cumple con la <em>Ley de Hick</em> (menos opciones = menor tiempo de decisión). Los ítems corresponden exactamente a las secciones de contenido del sitio.</li>
+  <li><strong>Botón ADM a la derecha:</strong> separado visualmente del menú principal para no confundir al visitante. Solo es relevante para administradores, por lo que su posición secundaria evita ruido visual para el usuario general.</li>
+  <li><strong>Resaltado de sección activa (ScrollSpy):</strong> el ítem del menú correspondiente a la sección visible cambia de color (dorado). Esto cumple con el principio de <em>feedback</em> inmediato: el usuario sabe en todo momento dónde se encuentra dentro del sitio.</li>
+  <li><strong>Menú colapsable en móvil (hamburguesa):</strong> la navegación se adapta al espacio disponible siguiendo el principio de diseño responsivo. El ícono de hamburguesa es ampliamente reconocido como indicador de menú oculto (<em>affordance</em> icónico).</li>
+</ul>
+
+<!-- 1.2 -->
+<h2 id="s12">1.2 Sección Hero / Portada (#inicio)</h2>
+
+<p>La portada ocupa el 100% de la altura de la pantalla (<code>min-height: 100vh</code>) y es lo primero que ve el usuario. Su diseño tiene como objetivo causar una primera impresión positiva y comunicar de inmediato el propósito del sitio.</p>
+
+<ul>
+  <li><strong>Imagen de fondo con overlay oscuro:</strong> el overlay semitransparente garantiza contraste suficiente entre el texto y la imagen, cumpliendo con las pautas de accesibilidad visual (WCAG AA requiere relación de contraste mínima de 4.5:1 para texto normal).</li>
+  <li><strong>Nombre de la institución como H1:</strong> el elemento más importante de la jerarquía visual. Su tamaño grande establece la jerarquía tipográfica y respeta el patrón de escaneo en F: es lo primero que el ojo procesa.</li>
+  <li><strong>Descripción breve en una línea:</strong> "Educación rural · Pedagogía de la Alternancia" comunica la propuesta de valor en pocas palabras. La brevedad es deliberada para no saturar la primera impresión y mantener al usuario leyendo.</li>
+  <li><strong>Dos botones de acción (CTA):</strong> "Conocé la escuela" como acción primaria (estilo sólido, mayor peso visual) y "Ver noticias" como secundaria (estilo contorno). La jerarquía visual guía al usuario hacia la acción más relevante sin forzarlo.</li>
+  <li><strong>Flecha de scroll animada:</strong> señal de <em>affordance</em> que indica la existencia de contenido debajo y que el sitio está diseñado para navegarse de forma lineal.</li>
+</ul>
+
+<!-- 1.3 -->
+<h2 id="s13">1.3 Sección Quiénes somos (#quienes)</h2>
+
+<p>Esta sección emplea el patrón de <strong>divulgación progresiva</strong> (<em>progressive disclosure</em>): primero se muestran tarjetas con resúmenes y al hacer clic se despliega el contenido completo sin salir de la página. Esto evita abrumar al usuario con texto extenso desde el inicio.</p>
+
+<ul>
+  <li><strong>Grilla de 3 tarjetas (Historia, Egresados, Pedagogía):</strong> divide el contenido en unidades cognitivas manejables. Tres bloques de información son procesables de un vistazo (<em>chunking</em>). Más de cinco elementos superarían la capacidad de memoria de trabajo inmediata.</li>
+  <li><strong>Ícono + título + texto + enlace dentro de cada tarjeta:</strong> jerarquía visual descendente que guía la lectura de lo más llamativo (ícono) a lo más específico (enlace de acción). El usuario puede decidir si le interesa un tema antes de hacer clic.</li>
+  <li><strong>Vista detalle con breadcrumb (miga de pan):</strong> al abrir el detalle aparece "Quiénes somos › Breve historia". Esto indica la posición actual del usuario dentro de la arquitectura de información (<em>principio de orientación</em>), equivalente a saber en qué pasillo de una biblioteca se está.</li>
+  <li><strong>Botones Anterior / Siguiente en el detalle:</strong> permiten explorar los tres temas sin volver al índice, reduciendo la cantidad de clics necesarios. Respetan la <em>economía de interacción</em>: la tarea más común (ver el siguiente tema) requiere el menor esfuerzo posible.</li>
+  <li><strong>Fondo blanco diferenciado:</strong> contrasta con el fondo oscuro de noticias y el crema de la portada, creando una separación visual clara entre secciones sin necesidad de bordes ni separadores explícitos (principio de <em>contraste</em> de Gestalt).</li>
+</ul>
+
+<!-- 1.4 -->
+<h2 id="s14">1.4 Sección Noticias (#noticias)</h2>
+
+<p>La sección de noticias en la página principal muestra solo las 3 más recientes, priorizando la información más actual. Mostrar demasiadas noticias en el inicio reduciría la atención a cada una y dificultaría la decisión de qué leer.</p>
+
+<ul>
+  <li><strong>Fondo oscuro carbón cálido (#363028):</strong> rompe visualmente con el blanco de la sección anterior. El contraste alto mejora la legibilidad y señala un cambio de tono, de institucional a informativo.</li>
+  <li><strong>Grilla de 3 columnas en escritorio, 1 en móvil:</strong> en pantallas grandes, la grilla permite comparar noticias de un vistazo. En móvil, cada noticia ocupa el ancho completo para no reducir el tamaño de las imágenes y el texto.</li>
+  <li><strong>Tarjeta con foto, fecha, categoría, título y enlace:</strong> jerarquía de información que va de lo visual (foto) a lo textual (título) al interactivo (enlace). La foto actúa como gancho; el título confirma si el artículo es relevante; el enlace proporciona la acción.</li>
+  <li><strong>Etiqueta de categoría (badge):</strong> permite al usuario filtrar mentalmente el contenido según su interés antes de invertir tiempo en leer el título completo.</li>
+  <li><strong>Botón "Ver todas las noticias":</strong> evita saturar el inicio con demasiado contenido y dirige al usuario a noticias.html cuando quiere explorar más.</li>
+</ul>
+
+<!-- 1.5 -->
+<h2 id="s15">1.5 Sección Contacto (#contacto)</h2>
+
+<p>La sección de contacto está diseñada para atender dos tipos de usuarios: quienes quieren enviar un mensaje (formulario) y quienes buscan datos rápidos (tarjeta de contacto). Ambos casos se resuelven en la misma pantalla sin necesidad de ir a otra página.</p>
+
+<ul>
+  <li><strong>Formulario a la izquierda (columna de 7/12):</strong> ocupa más espacio porque es la acción principal de esta sección. El espacio visual asignado a un elemento comunica su importancia (<em>Ley de Fitts</em>: más grande = más probable de ser usado).</li>
+  <li><strong>Tarjeta de datos y mapa a la derecha (5/12):</strong> información de acceso rápido para usuarios que no quieren completar el formulario. Teléfono, correo, Instagram y Facebook como enlaces directos minimizan el esfuerzo para contactar.</li>
+  <li><strong>Mapa embebido de Google Maps:</strong> reduce la fricción para quienes necesitan llegar físicamente. El usuario no tiene que abrir otra aplicación ni copiar la dirección.</li>
+  <li><strong>Validación en tiempo real (evento blur):</strong> los errores aparecen cuando el usuario sale de un campo incorrecto, no al enviar el formulario completo. Esto permite corregir sobre la marcha sin perder lo que ya escribió.</li>
+  <li><strong>Pantalla de confirmación tras el envío:</strong> reemplaza el formulario con un mensaje de éxito. Cumple con el principio de <em>feedback</em> y cierre de la interacción: el usuario sabe que su acción fue procesada correctamente.</li>
+</ul>
+
+<!-- 1.6 -->
+<h2 id="s16">1.6 Footer (Pie de página)</h2>
+
+<p>El footer cumple una función de <strong>cierre y referencia</strong>. Los usuarios que llegan al final de la página suelen buscar información de contacto alternativa o necesitan volver a una sección específica sin hacer scroll hasta el inicio.</p>
+
+<ul>
+  <li><strong>Tres columnas (Logo + descripción, Navegación, Contacto):</strong> división clara por tipo de contenido. El logo refuerza la identidad de marca al final de la experiencia; la navegación da acceso rápido a cualquier sección; el contacto ofrece acceso directo a canales digitales.</li>
+  <li><strong>Logo repetido:</strong> patrón convencional en sitios institucionales. Refuerza el reconocimiento de marca al final de la experiencia de usuario.</li>
+  <li><strong>Íconos SVG para redes sociales:</strong> son reconocibles de inmediato sin necesidad de leer el texto. El formato SVG garantiza nitidez en cualquier densidad de pantalla (retina, 4K).</li>
+  <li><strong>Copyright y año:</strong> elemento de confianza y seriedad institucional, convencional en sitios formales.</li>
+</ul>
+
+<!-- 1.7 -->
+<h2 id="s17">1.7 Página de Noticias (noticias.html)</h2>
+
+<p>Esta página dedica toda la pantalla a explorar y buscar noticias. Su diseño responde al patrón de <strong>búsqueda facetada simplificada</strong>: el usuario puede filtrar por texto libre y por año de forma combinada.</p>
+
+<ul>
+  <li><strong>Buscador visible al inicio:</strong> el usuario con una necesidad específica puede filtrar de inmediato, sin scroll. La tarea primaria recibe la posición más privilegiada de la página.</li>
+  <li><strong>Filtros por palabra clave y por año:</strong> dos dimensiones de filtrado cubren los casos de uso más frecuentes: "busco algo sobre siembra" (texto libre) y "quiero ver lo de 2025" (año).</li>
+  <li><strong>Botón "Buscar" alineado al pie de los inputs:</strong> siguiendo el patrón convencional de formularios de búsqueda donde el botón de acción está al mismo nivel que los campos, facilitando el reconocimiento del flujo.</li>
+  <li><strong>Grilla dinámica renderizada por JavaScript:</strong> el contenido refleja automáticamente los cambios del administrador. No hay contenido hardcodeado que pueda quedar desactualizado.</li>
+  <li><strong>Mensaje "sin resultados":</strong> cuando ninguna noticia coincide, aparece un mensaje explicativo. Evita que el usuario piense que la página está rota o vacía.</li>
+</ul>
+
+<!-- 1.8 -->
+<h2 id="s18">1.8 Página de Artículo Individual (noticia.html)</h2>
+
+<p>Cada noticia tiene su propia URL con parámetro de ID (<code>?id=noticia-1</code>). Esto implementa el principio de <strong>direccionabilidad</strong>: cada recurso tiene su propia dirección, lo que permite compartir artículos específicos y permite a buscadores indexar cada noticia por separado.</p>
+
+<ul>
+  <li><strong>Imagen destacada → título → fecha/categoría → bajada → cuerpo:</strong> jerarquía de lectura de lo más llamativo a lo más detallado. El usuario puede decidir si quiere leer el artículo completo antes de llegar al cuerpo.</li>
+  <li><strong>Botones para compartir (nativo, WhatsApp, copiar enlace):</strong> facilitan la difusión de contenido escolar, que es un objetivo institucional. El botón nativo aprovecha el menú del sistema en móviles, que ya incluye todas las apps instaladas.</li>
+  <li><strong>Enlace "Volver a noticias":</strong> salida clara y explícita. Reduce la dependencia del botón atrás del navegador, que en algunos flujos puede llevar a lugares inesperados.</li>
+</ul>
+
+<!-- 1.9 -->
+<h2 id="s19">1.9 Panel de Administración (admin.html)</h2>
+
+<p>Diseñado para usuarios no técnicos (personal de la escuela). El objetivo es minimizar la posibilidad de error y simplificar las operaciones de alta, edición y baja de noticias.</p>
+
+<ul>
+  <li><strong>Protección de ruta:</strong> la primera instrucción del JS verifica la sesión. Si no hay sesión activa, redirige al inicio antes de mostrar cualquier contenido.</li>
+  <li><strong>"Cerrar sesión" en el navbar:</strong> el botón ADM del navbar del panel de administración es tratado por <code>login.js</code> exactamente igual que en el resto de las páginas: al detectar la sesión activa, transforma el enlace en "Cerrar sesión". De esta manera el comportamiento es consistente en todo el sitio y no se necesita un botón separado dentro del contenido.</li>
+  <li><strong>"Editar noticias" al estar logueado:</strong> cuando el administrador navega a cualquier otra página del sitio (inicio, noticias, artículo), <code>login.js</code> inyecta dinámicamente un ítem "Editar noticias" en el menú de navegación que lleva directamente a <code>admin.html</code>. Esto evita que el administrador tenga que recordar la URL del panel o usar el botón atrás del navegador.</li>
+  <li><strong>Formulario oculto por defecto:</strong> el panel de carga solo aparece al hacer clic en "Agregar noticia" o "Editar". Esto reduce la carga visual y evita envíos accidentales.</li>
+  <li><strong>Lista de noticias existentes:</strong> el administrador puede ver de un vistazo qué hay cargado. Los botones de acción (Editar / Eliminar) están al lado de cada ítem para evitar confusión sobre a qué noticia aplican.</li>
+  <li><strong>Confirmación antes de eliminar:</strong> un diálogo de confirmación (<code>confirm()</code>) previene eliminaciones accidentales. Es una barrera mínima pero efectiva para una acción irreversible.</li>
+  <li><strong>Botón de restaurar datos originales:</strong> si el administrador comete errores graves, puede volver a los datos originales con un clic, sin necesidad de soporte técnico.</li>
+</ul>
+
+
+<!-- ════════════════════════════════════════════════════ -->
+<h1 id="sec2">2. Funciones JavaScript — Descripción y Funcionamiento</h1>
+
+<p>El sitio usa JavaScript vanilla (sin frameworks) dividido en siete archivos, cada uno con una responsabilidad específica. Todos los archivos usan declaraciones de función (<code>function</code>) y la palabra clave <code>let</code> para garantizar coherencia de estilo.</p>
+
+<!-- 2.1 -->
+<h2 id="s21">2.1 datos-noticias.js</h2>
+
+<p>Define la variable global <code>noticias</code>: un array de objetos donde cada objeto representa una noticia publicada. Cada noticia tiene los siguientes campos:</p>
+
+<table>
+  <tr><th>Campo</th><th>Tipo</th><th>Descripción</th></tr>
+  <tr><td><code>id</code></td><td>string</td><td>Identificador único (ej: "noticia-1")</td></tr>
+  <tr><td><code>titulo</code></td><td>string</td><td>Título de la noticia</td></tr>
+  <tr><td><code>categoria</code></td><td>string</td><td>Categoría (Producción, Egresados, etc.)</td></tr>
+  <tr><td><code>fecha</code></td><td>string</td><td>Fecha en formato ISO: YYYY-MM-DD</td></tr>
+  <tr><td><code>fechaTexto</code></td><td>string</td><td>Fecha en español: "15 de mayo de 2026"</td></tr>
+  <tr><td><code>foto</code></td><td>string</td><td>Ruta relativa de la imagen</td></tr>
+  <tr><td><code>alt</code></td><td>string</td><td>Texto alternativo de la imagen (accesibilidad)</td></tr>
+  <tr><td><code>bajada</code></td><td>string</td><td>Resumen corto del artículo</td></tr>
+  <tr><td><code>cuerpo</code></td><td>string</td><td>HTML completo del artículo</td></tr>
+</table>
+
+<p>Al final del archivo, verifica si existe la clave <code>'noticias'</code> en <code>localStorage</code>. Si existe, reemplaza el array por defecto con los datos guardados por el administrador. Esto permite que las modificaciones persistan entre sesiones del navegador sin necesidad de un servidor o base de datos.</p>
+
+<!-- 2.2 -->
+<h2 id="s22">2.2 main.js</h2>
+
+<p>Gestiona toda la interactividad de la página principal (<code>index.html</code>). Incluye el menú móvil, la vista de detalle de "Quiénes somos" y el renderizado de noticias recientes.</p>
+
+<h3>Cierre del menú móvil</h3>
+<p>Registra un listener en cada enlace del menú. Al hacer clic, obtiene la instancia activa del componente Collapse de Bootstrap (<code>bootstrap.Collapse.getInstance()</code>) y llama a su método <code>hide()</code>. Esto evita que el menú quede abierto después de que el usuario selecciona una sección.</p>
+
+<h3>abrirDetalle(idTema)</h3>
+<p>Recibe el identificador de un tema (<code>'historia'</code>, <code>'egresados'</code> o <code>'pedagogia'</code>). Busca el índice del tema en el array <code>temas</code> usando <code>findIndex()</code> y llama a <code>mostrarDetalle()</code> con ese índice.</p>
+
+<h3>mostrarDetalle(indice)</h3>
+<p>Actualiza el DOM con los datos del tema seleccionado: cambia la imagen, el título en el breadcrumb y el cuerpo del panel de detalle. Actualiza el estado <code>disabled</code> de los botones Anterior y Siguiente según si se está en el extremo del array. Luego oculta el índice de tarjetas, muestra el panel de detalle, hace scroll suave a la sección y mueve el foco al título para que los lectores de pantalla lo anuncien.</p>
+
+<h3>cerrarDetalle()</h3>
+<p>Realiza la operación inversa: oculta el panel de detalle y muestra el índice de tarjetas. Hace scroll suave de vuelta a la sección.</p>
+
+<h3>Renderizado de noticias recientes</h3>
+<p>Busca el elemento con id <code>'noticias-inicio'</code>. Si existe y el array <code>noticias</code> está disponible, toma los primeros 3 elementos con <code>slice(0, 3)</code> y construye el HTML de las tarjetas usando <code>map()</code> para transformar cada objeto en una cadena HTML, y <code>join('')</code> para concatenarlas. El resultado se inserta en el DOM mediante <code>innerHTML</code>. Al compartir el array con <code>datos-noticias.js</code>, si el admin agrega una noticia, aparecerá automáticamente en este bloque.</p>
+
+<!-- 2.3 -->
+<h2 id="s23">2.3 login.js</h2>
+
+<p>Compartido por todas las páginas del sitio. Gestiona la autenticación del administrador mediante un modal de Bootstrap. Se ejecuta dentro de <code>DOMContentLoaded</code> para asegurar que el DOM esté completamente cargado antes de buscar elementos.</p>
+
+<h3>Verificación de sesión activa y acceso al panel</h3>
+<p>Al cargarse, verifica si existe la clave <code>'adminLogueado'</code> en <code>sessionStorage</code>. Si existe, transforma todos los elementos con clase <code>.enlace-adm</code> en un botón de "Cerrar sesión" que al hacer clic elimina la clave y redirige al inicio. Esto aplica en todas las páginas del sitio, incluyendo <code>admin.html</code>, de modo que el navbar siempre muestra el mismo comportamiento independientemente de en qué página se encuentre el administrador.</p>
+<p>Adicionalmente, si la página actual no es <code>admin.html</code>, el script inyecta dinámicamente un nuevo ítem "Editar noticias" al final del menú de navegación, con un enlace a <code>admin.html</code>. El elemento se crea con <code>document.createElement()</code>, se le asigna el HTML del enlace con <code>innerHTML</code> y se inserta en el <code>&lt;ul&gt;</code> del menú con <code>appendChild()</code>. Esto permite que el administrador logueado pueda acceder al panel desde cualquier página sin necesidad de recordar la URL.</p>
+
+<h3>Apertura del modal</h3>
+<p>Si no hay sesión activa, cada botón ADM escucha el evento <code>click</code> y abre el modal de login con <code>bootstrap.Modal.getOrCreateInstance(modalEl).show()</code>. El método <code>getOrCreateInstance</code> evita crear instancias duplicadas si el usuario hace clic varias veces.</p>
+
+<h3>Validación de credenciales</h3>
+<p>Al enviar el formulario de login, compara los valores del usuario y la contraseña con los valores fijos (<code>'admin'</code> y <code>'cept2025'</code>). Si son correctos, guarda <code>'adminLogueado'</code> en <code>sessionStorage</code> y redirige a <code>admin.html</code>. Si son incorrectos, muestra el <code>div</code> de error sin recargar la página.</p>
+
+<h3>Toggle de visibilidad de contraseña</h3>
+<p>El botón de ojo (presente solo en <code>index.html</code>) cambia el atributo <code>type</code> del campo entre <code>'password'</code> y <code>'text'</code>, y alterna los íconos correspondientes. También actualiza <code>aria-label</code> y <code>aria-pressed</code> para que la acción sea comprensible para usuarios de lectores de pantalla.</p>
+
+<h3>Limpieza al abrir el modal</h3>
+<p>Escucha el evento <code>show.bs.modal</code> para resetear el formulario cada vez que se abre: limpia los campos, oculta el mensaje de error y restaura el estado inicial del toggle de contraseña.</p>
+
+<!-- 2.4 -->
+<h2 id="s24">2.4 validacion.js</h2>
+
+<p>Maneja la validación del formulario de contacto en <code>index.html</code>. Expone funciones accesibles globalmente y registra los listeners dentro de <code>DOMContentLoaded</code>.</p>
+
+<h3>mostrarError(id, mensaje)</h3>
+<p>Recibe el <code>id</code> de un campo HTML y un mensaje de error. Agrega la clase CSS <code>'invalido'</code> al campo (aplica borde rojo), establece el atributo <code>aria-invalid='true'</code> para informar a lectores de pantalla, y escribe el mensaje en el <code>&lt;span&gt;</code> de error correspondiente (con id <code>'error-[campo]'</code>).</p>
+
+<h3>limpiarError(id)</h3>
+<p>Operación inversa: quita la clase <code>'invalido'</code>, elimina el atributo <code>aria-invalid</code> y vacía el texto del span de error. Se llama automáticamente cuando un campo pasa la validación.</p>
+
+<h3>validarCampo(id)</h3>
+<p>Función central. Obtiene el valor del campo con <code>trim()</code> (elimina espacios al inicio y al final) y aplica las reglas según el id recibido:</p>
+<ul>
+  <li><strong>nombre:</strong> no puede estar vacío.</li>
+  <li><strong>email:</strong> obligatorio y debe coincidir con la expresión regular <code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code>.</li>
+  <li><strong>telefono:</strong> si se completa, solo puede contener dígitos, espacios y guiones (<code>/^[\d\s-]+$/</code>). Es opcional.</li>
+  <li><strong>asunto:</strong> debe seleccionarse una opción del select.</li>
+  <li><strong>mensaje:</strong> obligatorio y debe tener al menos 10 caracteres.</li>
+</ul>
+<p>Devuelve <code>true</code> si el campo es válido, <code>false</code> si hay un error (y lo muestra).</p>
+
+<h3>mostrarExito()</h3>
+<p>Oculta el formulario con la clase CSS <code>'oculto'</code> y muestra el panel de confirmación. Resetea el formulario, limpia todos los mensajes de error y mueve el foco al panel de confirmación para que lectores de pantalla lo anuncien.</p>
+
+<h3>Listeners registrados en DOMContentLoaded</h3>
+<p>Registra validación en tiempo real: cada campo dispara <code>validarCampo()</code> al perder el foco (evento <code>blur</code>). Al enviar el formulario, valida todos los campos y si hay errores mueve el foco al primero con error. Si todo es válido, llama a <code>mostrarExito()</code>. Un listener adicional en el botón "Hacer otra consulta" oculta la confirmación y vuelve a mostrar el formulario.</p>
+
+<!-- 2.5 -->
+<h2 id="s25">2.5 noticias.js</h2>
+
+<p>Gestiona el filtrado y renderizado de la grilla de noticias en <code>noticias.html</code>. Trabaja directamente con el array global <code>noticias</code> definido por <code>datos-noticias.js</code>.</p>
+
+<h3>renderGrilla(lista)</h3>
+<p>Recibe un array de noticias (completo o filtrado). Si está vacío, muestra el panel de "sin resultados" (remueve el atributo <code>hidden</code>) y vacía la grilla. Si tiene elementos, genera el HTML de cada tarjeta usando <code>map()</code> y lo inserta en el contenedor <code>#grilla-noticias</code> con <code>innerHTML</code>. Cada tarjeta incluye imagen, fecha, categoría, título y un enlace a <code>noticia.html?id=[id]</code>.</p>
+
+<h3>Listener del formulario de búsqueda</h3>
+<p>Escucha el evento <code>submit</code> del formulario. Llama a <code>preventDefault()</code> para evitar la recarga de la página. Obtiene la palabra clave (convertida a minúsculas) y el año seleccionado. Filtra el array <code>noticias</code> con el método <code>filter()</code>: una noticia pasa el filtro si:</p>
+<ul>
+  <li>La palabra clave está vacía, o aparece en el título, la bajada o el cuerpo de la noticia (comparación insensible a mayúsculas).</li>
+  <li>El año está vacío, o la fecha de la noticia comienza con ese año (formato ISO garantiza que el año está al inicio del string).</li>
+</ul>
+<p>El array resultante se pasa a <code>renderGrilla()</code>.</p>
+
+<h3>Render inicial</h3>
+<p>Al cargar la página, llama a <code>renderGrilla(noticias)</code> con el array completo para mostrar todas las noticias disponibles, incluyendo las que el administrador haya cargado.</p>
+
+<!-- 2.6 -->
+<h2 id="s26">2.6 noticia.js</h2>
+
+<p>Gestiona la página de artículo individual (<code>noticia.html</code>). Lee el parámetro de la URL, encuentra la noticia correspondiente y rellena el DOM. También maneja los botones de compartir.</p>
+
+<h3>Lectura del parámetro de URL</h3>
+<p>Usa la clase <code>URLSearchParams</code> para extraer el valor del parámetro <code>id</code> de la URL actual (ej: <code>noticia.html?id=noticia-1</code>). Luego busca en el array <code>noticias</code> el objeto cuyo <code>id</code> coincida, usando el método <code>find()</code>. Si no encuentra ninguno (id inválido o noticia eliminada), redirige automáticamente a <code>noticias.html</code>.</p>
+
+<h3>Renderizado del artículo</h3>
+<p>Si la noticia existe, actualiza el título de la pestaña del navegador (<code>document.title</code>), y rellena cada elemento del artículo: imagen (<code>src</code> y <code>alt</code>), miga de pan, título del H1, fecha (<code>textContent</code> y atributo <code>datetime</code>), categoría, bajada y cuerpo (con <code>innerHTML</code> para interpretar las etiquetas HTML del campo cuerpo). Mueve el foco al H1 para accesibilidad.</p>
+
+<h3>Compartir nativo (Web Share API)</h3>
+<p>Verifica si el navegador implementa la API con <code>if (navigator.share)</code>. Si está disponible (principalmente en móviles), registra un listener que llama a <code>navigator.share()</code> con el título, la bajada y la URL actual. Si no está disponible, el botón se oculta con <code>hidden = true</code>.</p>
+
+<h3>Compartir por WhatsApp</h3>
+<p>Construye una URL de WhatsApp (<code>https://wa.me/?text=</code>) con el texto codificado usando <code>encodeURIComponent()</code>, que incluye el título y la URL del artículo. Al hacer clic en el enlace, WhatsApp se abre con el mensaje pre-cargado.</p>
+
+<h3>Copiar enlace al portapapeles</h3>
+<p>Usa <code>navigator.clipboard.writeText(url)</code>, que devuelve una <em>Promise</em>. Al resolverse correctamente (<code>.then()</code>), el texto del botón cambia a "¡Enlace copiado!" durante 2.5 segundos y luego vuelve a "Copiar enlace" mediante <code>setTimeout()</code>.</p>
+
+<!-- 2.7 -->
+<h2 id="s27">2.7 admin.js</h2>
+
+<p>Gestiona el panel de administración (<code>admin.html</code>). La primera instrucción verifica la sesión: si no hay <code>'adminLogueado'</code> en <code>sessionStorage</code>, redirige al inicio antes de cargar el resto del script.</p>
+
+<h3>guardarNoticias()</h3>
+<p>Serializa el array global <code>noticias</code> a texto JSON con <code>JSON.stringify()</code> y lo guarda en <code>localStorage</code> bajo la clave <code>'noticias'</code>. A partir de ese momento, <code>datos-noticias.js</code> cargará estos datos en lugar de los originales cada vez que se abra el sitio.</p>
+
+<h3>generarId()</h3>
+<p>Crea un identificador único para noticias nuevas usando <code>Date.now()</code>, que devuelve el número de milisegundos transcurridos desde el 1° de enero de 1970 (timestamp Unix). El resultado tiene el formato <code>'noticia-1718000000000'</code>. Garantiza unicidad mientras no se creen dos noticias exactamente en el mismo milisegundo.</p>
+
+<h3>fechaATexto(iso)</h3>
+<p>Convierte una fecha en formato ISO (<code>'2026-05-15'</code>) a texto legible en español (<code>'15 de mayo de 2026'</code>). Separa los componentes con <code>split('-')</code>, convierte el mes a nombre usando el array <code>meses</code> (índice base 0, por eso se resta 1 al número de mes), y concatena el resultado.</p>
+
+<h3>abrirFormulario(id)</h3>
+<p>Prepara el formulario para crear o editar. Si recibe un <code>id</code> (modo edición), busca la noticia en el array con <code>find()</code> y rellena todos los campos del formulario. Si <code>id</code> es <code>null</code> (modo creación), limpia el formulario. En ambos casos muestra el panel y hace scroll hacia él.</p>
+
+<h3>cerrarFormulario()</h3>
+<p>Oculta el panel del formulario agregando la clase CSS <code>'oculto-admin'</code>.</p>
+
+<h3>limpiarErrores() y marcarError(campo, msg)</h3>
+<p><code>limpiarErrores()</code> recorre los campos validados usando <code>forEach()</code> y borra los mensajes de error y la clase de estilo de error. <code>marcarError()</code> muestra un mensaje específico para un campo y aplica el estilo visual de error (<code>invalido</code>).</p>
+
+<h3>Listener submit del formulario</h3>
+<p>Al enviar el formulario: recolecta los valores de todos los campos, valida que título, categoría, fecha y cuerpo no estén vacíos. Si hay errores, los muestra y cancela el guardado. Si todo es válido, construye el objeto <code>noticia</code>. Si hay un <code>id</code> (edición), localiza la posición en el array con <code>findIndex()</code> y reemplaza el objeto. Si no hay <code>id</code> (creación), inserta la nueva noticia al inicio del array con <code>unshift()</code> (la más reciente queda primero). Luego llama a <code>guardarNoticias()</code>, cierra el formulario y actualiza la lista visible.</p>
+
+<h3>renderLista()</h3>
+<p>Genera el HTML de la lista de administración. Si el array está vacío, muestra un mensaje. Si tiene elementos, genera una fila por noticia con categoría, título, fecha y dos botones: <strong>Editar</strong> (llama a <code>abrirFormulario</code> con el <code>id</code> de la noticia) y <strong>Eliminar</strong> (pide confirmación con <code>confirm()</code>, y si el usuario acepta, filtra el array con <code>filter()</code> para eliminar la noticia, guarda y vuelve a renderizar).</p>
+
+<h3>Restaurar noticias originales</h3>
+<p>El botón de restaurar elimina la clave <code>'noticias'</code> del <code>localStorage</code> con <code>removeItem()</code> y llama a <code>window.location.reload()</code>. Al recargar, <code>datos-noticias.js</code> no encontrará datos guardados y usará el array original definido en el archivo.</p>
+
+<p><em>Nota:</em> el cierre de sesión desde el panel de administración ya no está gestionado por este archivo. Al igual que en el resto del sitio, es <code>login.js</code> quien detecta la sesión activa y transforma el enlace ADM del navbar en "Cerrar sesión", manteniendo el comportamiento consistente en todas las páginas.</p>
+
+
+<!-- ════════════════════════════════════════════════════ -->
+<h1 id="sec3">3. Tecnologías y Herramientas Utilizadas</h1>
+
+<table>
+  <tr><th>Tecnología</th><th>Uso en el proyecto</th></tr>
+  <tr><td>HTML5 semántico</td><td>Estructuración con <code>article</code>, <code>section</code>, <code>nav</code>, <code>header</code>, <code>footer</code>, <code>main</code>, <code>time</code> para dar significado al contenido más allá de lo visual.</td></tr>
+  <tr><td>CSS3 con variables personalizadas</td><td>Paleta de colores y tipografía definidas como variables en <code>:root</code> para facilitar la consistencia y posibles cambios futuros de diseño.</td></tr>
+  <tr><td>Bootstrap 5</td><td>Sistema de grilla responsiva, componentes (modal, collapse, navbar) y utilidades de espaciado y alineación.</td></tr>
+  <tr><td>JavaScript vanilla (ES6)</td><td>Sin frameworks ni librerías externas. Funciones nombradas, métodos de array (<code>map</code>, <code>filter</code>, <code>find</code>, <code>findIndex</code>, <code>forEach</code>, <code>slice</code>).</td></tr>
+  <tr><td>localStorage</td><td>Persistencia de las noticias cargadas por el administrador entre sesiones del navegador.</td></tr>
+  <tr><td>sessionStorage</td><td>Gestión de la sesión del administrador. Se limpia automáticamente al cerrar el navegador.</td></tr>
+  <tr><td>Web Share API</td><td>Compartir artículos con el menú nativo del sistema operativo en dispositivos móviles.</td></tr>
+  <tr><td>URLSearchParams</td><td>Lectura de parámetros en la URL (ej: <code>?id=noticia-1</code>) para cargar la noticia correcta en <code>noticia.html</code>.</td></tr>
+  <tr><td>Bootstrap ScrollSpy</td><td>Detección automática de la sección visible para actualizar el estado activo del ítem de menú correspondiente.</td></tr>
+  <tr><td>Google Fonts (Fraunces + Inter)</td><td>Fraunces (serif) para títulos: transmite identidad rural y académica. Inter (sans-serif) para cuerpo: máxima legibilidad en pantalla.</td></tr>
+  <tr><td>SVG inline</td><td>Íconos vectoriales para redes sociales y botones. No requieren archivos externos y se escalan sin pérdida de calidad.</td></tr>
+</table>
+
+<br><br>
+<p style="text-align:center; color:#888; font-size:9pt;">— Fin del informe —</p>
+
+</body>
+</html>

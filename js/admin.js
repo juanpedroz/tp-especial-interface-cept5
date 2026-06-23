@@ -173,13 +173,6 @@ function renderLista() {
   });
 }
 
-// --- Cerrar sesión ---
-
-document.getElementById('btn-cerrar-sesion').addEventListener('click', function () {
-  sessionStorage.removeItem('adminLogueado');
-  window.location.href = 'index.html';
-});
-
 // --- Restaurar noticias originales ---
 
 document.getElementById('btn-restaurar').addEventListener('click', function () {

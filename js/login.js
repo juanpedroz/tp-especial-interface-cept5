@@ -15,6 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'index.html';
       });
     });
+
+    // Si no estamos en el panel de admin, agregar link "Editar noticias" al menú
+    if (!window.location.href.includes('admin.html')) {
+      let navList = document.querySelector('#contenido-menu .navbar-nav');
+      if (navList) {
+        let li = document.createElement('li');
+        li.className = 'nav-item';
+        li.innerHTML = '<a class="nav-link enlace-menu" href="admin.html">Editar noticias</a>';
+        navList.appendChild(li);
+      }
+    }
+
     return;
   }
 
