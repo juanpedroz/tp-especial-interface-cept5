@@ -173,13 +173,5 @@ function renderLista() {
   });
 }
 
-// --- Restaurar noticias originales ---
-
-document.getElementById('btn-restaurar').addEventListener('click', function () {
-  if (!confirm('¿Restaurar las noticias originales? Se perderán todos los cambios.')) return;
-  localStorage.removeItem('noticias');
-  window.location.reload();
-});
-
 // Render inicial
 renderLista();
