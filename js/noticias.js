@@ -16,7 +16,7 @@ function crearTarjeta(n) {
 
 function renderizar(lista) {
   let grilla = document.getElementById('grilla-noticias');
-  let vacio  = document.getElementById('sin-resultados');
+  let vacio = document.getElementById('sin-resultados');
 
   if (lista.length === 0) {
     grilla.innerHTML = '';

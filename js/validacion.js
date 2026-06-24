@@ -61,9 +61,9 @@ function validarCampo(id) {
 
 // Oculta el formulario y muestra el panel de confirmación
 function mostrarExito() {
-  let form         = document.getElementById('formulario');
+  let form = document.getElementById('formulario');
   let confirmacion = document.getElementById('confirmacion');
-  let campos       = ['nombre', 'email', 'telefono', 'asunto', 'mensaje'];
+  let campos = ['nombre', 'email', 'telefono', 'asunto', 'mensaje'];
 
   form.reset();
   campos.forEach(function (id) { limpiarError(id); });
@@ -75,7 +75,7 @@ function mostrarExito() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  let form   = document.getElementById('formulario');
+  let form = document.getElementById('formulario');
   let campos = ['nombre', 'email', 'telefono', 'asunto', 'mensaje'];
 
   // Valida un campo cuando el usuario sale de él
