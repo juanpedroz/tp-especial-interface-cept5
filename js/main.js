@@ -139,9 +139,11 @@ if (contenedor && typeof noticias !== 'undefined') {
   contenedor.innerHTML = recientes.map(function (n) {
     return '<div class="col-12 col-md-4">' +
       '<article class="noticia">' +
-        '<img src="' + n.foto + '" alt="' + n.alt + '" class="noticia-foto" />' +
-        '<div class="noticia-cuerpo">' +
+        '<div class="noticia-imagen">' +
+          '<img src="' + n.foto + '" alt="' + n.alt + '" class="noticia-foto" />' +
           '<time class="noticia-fecha" datetime="' + n.fecha + '">' + n.fechaTexto + '</time>' +
+        '</div>' +
+        '<div class="noticia-cuerpo">' +
           '<span class="noticia-categoria">' + n.categoria + '</span>' +
           '<h3 class="noticia-titulo">' + n.titulo + '</h3>' +
           '<a href="noticia.html?id=' + n.id + '" class="noticia-enlace">Leer más →</a>' +
