@@ -243,13 +243,14 @@
         Estamos en Estación Miranda, Rauch. Escribinos o llamanos, con gusto te atendemos.
       </p>
 
+      <!-- datos de contacto + mapa -->
       <div class="row g-4 align-items-stretch">
 
-        <!-- datos de contacto + mapa -->
-        <div class="col-12 col-lg-5 d-flex flex-column gap-4 order-lg-2">
-          <div class="tarjeta-contacto">
+        <!-- datos de contacto -->
+        <div class="col-12 col-lg-5">
+          <div class="tarjeta-contacto h-100 d-flex flex-column">
             <h3 class="contacto-titulo">Datos de contacto</h3>
-            <ul class="lista-contacto">
+            <ul class="lista-contacto flex-grow-1">
 
               <li class="item-contacto">
                 <span class="icono-contacto" aria-hidden="true">
@@ -298,12 +299,25 @@
               </li>
 
             </ul>
+            <div class="contacto-accion">
+              <button
+                type="button"
+                class="btn boton-primario w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#modal-contacto"
+              >
+                Hacer una consulta
+              </button>
+            </div>
           </div>
+        </div>
 
-          <div class="mapa-contenedor flex-grow-1">
+        <!-- mapa -->
+        <div class="col-12 col-lg-7">
+          <div class="mapa-contenedor h-100">
             <iframe
               class="mapa-iframe"
-              src="https://maps.google.com/maps?q=-36.533977,-59.133693&z=15&output=embed"
+              src="https://maps.google.com/maps?q=-36.533977,-59.133693&z=15&output=embed&t=k"
               title="Mapa de ubicación del CEPT N° 5 de Miranda"
               loading="lazy"
               allowfullscreen
@@ -311,87 +325,6 @@
           </div>
         </div>
 
-        <!-- formulario de contacto -->
-        <div class="col-12 col-lg-7 order-lg-1">
-          <div class="tarjeta-formulario h-100">
-
-            <form id="formulario" novalidate>
-              <h3 class="formulario-titulo">Formulario de contacto</h3>
-
-              <div class="row g-3">
-
-                <div class="col-12 col-md-6">
-                  <div class="campo">
-                    <label for="nombre">Nombre y apellido</label>
-                    <input type="text" id="nombre" name="nombre" required
-                           placeholder="Ej: María González" aria-describedby="error-nombre" />
-                    <span id="error-nombre" class="error" aria-live="polite"></span>
-                  </div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <div class="campo">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required
-                           placeholder="ejemplo@correo.com" aria-describedby="error-email" />
-                    <span id="error-email" class="error" aria-live="polite"></span>
-                  </div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <div class="campo">
-                    <label for="telefono">Teléfono <span class="opcional">(opcional)</span></label>
-                    <input type="tel" id="telefono" name="telefono"
-                           placeholder="Ej: 02296 123456" aria-describedby="error-telefono" />
-                    <span id="error-telefono" class="error" aria-live="polite"></span>
-                  </div>
-                </div>
-
-                <div class="col-12 col-md-6">
-                  <div class="campo">
-                    <label for="asunto">Asunto</label>
-                    <select id="asunto" name="asunto" required aria-describedby="error-asunto">
-                      <option value="" disabled selected>Seleccioná un asunto…</option>
-                      <option value="informacion-general">Información general</option>
-                      <option value="inscripcion">Inscripción</option>
-                      <option value="pedagogia-alternancia">Pedagogía de la Alternancia</option>
-                      <option value="otro">Otro</option>
-                    </select>
-                    <span id="error-asunto" class="error" aria-live="polite"></span>
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <div class="campo">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" required minlength="10" rows="4"
-                              placeholder="Escribí tu consulta acá…" aria-describedby="error-mensaje"></textarea>
-                    <span id="error-mensaje" class="error" aria-live="polite"></span>
-                  </div>
-                </div>
-
-                <div class="col-12 col-md-4">
-                  <button type="submit" class="btn boton-primario w-100">Enviar consulta</button>
-                </div>
-
-              </div>
-            </form>
-
-            <!-- panel de confirmación (oculto hasta enviar) -->
-            <div id="confirmacion" class="confirmacion oculto" tabindex="-1" role="status">
-              <div class="icono-check" aria-hidden="true">
-                <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-                  <circle class="circulo" cx="26" cy="26" r="24" fill="none"/>
-                  <path class="tilde" fill="none" d="M13 27 l9 9 l17-18"/>
-                </svg>
-              </div>
-              <h3 class="formulario-titulo">¡Consulta enviada!</h3>
-              <p>Gracias por escribirnos. Te responderemos a la brevedad.</p>
-              <button type="button" id="btn-nueva" class="btn boton-primario mt-2">Hacer otra consulta</button>
-            </div>
-
-          </div>
-        </div>
       </div>
 
     </div>
@@ -513,6 +446,98 @@
             <button type="submit" class="btn boton-primario w-100">Iniciar sesión</button>
 
           </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal de consulta -->
+  <div class="modal fade" id="modal-contacto" tabindex="-1"
+       aria-labelledby="titulo-modal-contacto" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content login-contenido">
+
+        <div class="modal-header login-cabecera">
+          <h2 class="modal-title login-titulo" id="titulo-modal-contacto">Hacer una consulta</h2>
+          <button type="button" class="btn-close btn-close-white"
+                  data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body login-cuerpo">
+
+          <form id="formulario" novalidate>
+            <div class="row g-3">
+
+              <div class="col-12 col-md-6">
+                <div class="campo">
+                  <label for="nombre">Nombre y apellido</label>
+                  <input type="text" id="nombre" name="nombre" required
+                         placeholder="Ej: María González" aria-describedby="error-nombre" />
+                  <span id="error-nombre" class="error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="campo">
+                  <label for="email">Correo electrónico</label>
+                  <input type="email" id="email" name="email" required
+                         placeholder="ejemplo@correo.com" aria-describedby="error-email" />
+                  <span id="error-email" class="error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="campo">
+                  <label for="telefono">Teléfono <span class="opcional">(opcional)</span></label>
+                  <input type="tel" id="telefono" name="telefono"
+                         placeholder="Ej: 02296 123456" aria-describedby="error-telefono" />
+                  <span id="error-telefono" class="error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="campo">
+                  <label for="asunto">Asunto</label>
+                  <select id="asunto" name="asunto" required aria-describedby="error-asunto">
+                    <option value="" disabled selected>Seleccioná un asunto…</option>
+                    <option value="informacion-general">Información general</option>
+                    <option value="inscripcion">Inscripción</option>
+                    <option value="pedagogia-alternancia">Pedagogía de la Alternancia</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                  <span id="error-asunto" class="error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="campo">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" required minlength="10" rows="5"
+                            placeholder="Escribí tu consulta acá…" aria-describedby="error-mensaje"></textarea>
+                  <span id="error-mensaje" class="error" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn boton-primario w-100">Enviar consulta</button>
+              </div>
+
+            </div>
+          </form>
+
+          <!-- panel de confirmación (oculto hasta enviar) -->
+          <div id="confirmacion" class="confirmacion oculto" tabindex="-1" role="status">
+            <div class="icono-check" aria-hidden="true">
+              <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <circle class="circulo" cx="26" cy="26" r="24" fill="none"/>
+                <path class="tilde" fill="none" d="M13 27 l9 9 l17-18"/>
+              </svg>
+            </div>
+            <h3 class="formulario-titulo">¡Consulta enviada!</h3>
+            <p>Gracias por escribirnos. Te responderemos a la brevedad.</p>
+            <button type="button" id="btn-nueva" class="btn boton-primario mt-2">Hacer otra consulta</button>
+          </div>
 
         </div>
       </div>

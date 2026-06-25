@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .seccion-contacto {
-  /* hereda min-height y flex de .seccion */
+  justify-content: flex-start;
 }
 
 .seccion > .container {
@@ -1047,12 +1047,53 @@ h1, h2, h3, h4, h5, h6 {
 
 /* CONTACTO */
 
+/* Tarjeta de ubicación (blanca, par visual de tarjeta-contacto) */
+.tarjeta-ubicacion {
+  background-color: #fff;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: 0 2px 12px rgba(31, 77, 58, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ubicacion-titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.2rem;
+  color: var(--verde-pino);
+  margin: 0;
+  padding: 1.25rem 1.75rem 1rem;
+  border-bottom: 1px solid var(--crema-medio);
+  flex-shrink: 0;
+}
+
+.mapa-ubicacion {
+  flex: 1;
+  border-radius: 0;
+  min-height: 280px;
+}
+
+.mapa-fijo {
+  height: 320px;
+}
+
 /* Tarjeta de datos en verde pino */
 .tarjeta-contacto {
   background-color: var(--verde-pino);
   border-radius: var(--radio-tarjeta);
   padding: 2rem 1.75rem;
-  height: 100%;
+}
+
+/* Zona del botón CTA al pie de la tarjeta */
+.contacto-accion {
+  padding-top: 1.75rem;
+  margin-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Los ítems se distribuyen verticalmente para llenar el espacio disponible */
+.tarjeta-contacto .lista-contacto {
+  justify-content: space-between;
 }
 
 .contacto-titulo {
@@ -1072,10 +1113,23 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1.25rem;
 }
 
+/* Variante 2 columnas para cuando la tarjeta ocupa más ancho */
+.lista-contacto-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .lista-contacto-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Cada ítem: ícono + dato en la misma fila */
 .item-contacto {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.9rem;
 }
 
@@ -1083,7 +1137,6 @@ h1, h2, h3, h4, h5, h6 {
 .icono-contacto {
   color: var(--dorado);
   flex-shrink: 0;
-  margin-top: 0.1rem;
 }
 
 /* Texto / enlace del dato */
