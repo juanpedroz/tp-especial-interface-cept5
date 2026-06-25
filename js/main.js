@@ -15,14 +15,14 @@ const temas = [
     titulo: 'Breve historia',
     foto: 'img/img_inicios.jpeg',
     alt: 'Vista histórica del CEPT N° 5 de Miranda',
-    cuerpo: '<p>El C.E.P.T. N° 5 se creó el 24 de marzo de 1991 por iniciativa de la Junta ' +
-      'Vecinal "Unión Mirandense", para promover la educación de las y los jóvenes del ' +
+    cuerpo: '<p>El <strong>C.E.P.T. N° 5</strong> se creó el 24 de marzo de 1991 por iniciativa de la <strong>Junta ' +
+      'Vecinal "Unión Mirandense"</strong>, para promover la educación de las y los jóvenes del ' +
       'campo y evitar el desarraigo.</p>' +
       '<p>Tuvo mucho apoyo de vecinos y vecinas, de las instituciones de la comunidad y de ' +
-      'la Municipalidad de Rauch. En acuerdo con el Gobierno Municipal, funcionó el primer ' +
+      'la <strong>Municipalidad de Rauch</strong>. En acuerdo con el Gobierno Municipal, funcionó el primer ' +
       'año en la sala de primeros auxilios y en la Delegación Municipal.</p>' +
       '<p>Al año siguiente se mudó a la antigua casa de Antonio Picerno. Luego, el Consejo ' +
-      'de Administración de la ACEPT N° 5 aportó una casita lindera que había logrado ' +
+      'de Administración de la <strong>ACEPT N° 5</strong> aportó una casita lindera que había logrado ' +
       'comprar tras una gran fiesta criolla el año anterior.</p>' +
       '<p>En 1994, el edificio de la Estación del Ferrocarril pasó a la institución. Se ' +
       'hicieron arreglos y ampliaciones: dormitorios y baños, aulas, SUM y comedor. Su ' +
