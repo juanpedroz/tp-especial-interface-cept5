@@ -71,8 +71,11 @@
   <!-- artículo -->
   <main>
 
-    <!-- Foto a ancho completo -->
-    <img id="articulo-foto" src="" alt="" class="articulo-foto" />
+    <!-- Hero: foto a ancho completo con categoría superpuesta -->
+    <div class="articulo-hero">
+      <img id="articulo-foto" src="" alt="" class="articulo-foto" />
+      <span id="articulo-categoria" class="articulo-cat-badge"></span>
+    </div>
 
     <div class="container articulo-contenido">
 
@@ -95,10 +98,9 @@
       <!-- Título -->
       <h1 id="articulo-titulo" class="articulo-titulo" tabindex="-1"></h1>
 
-      <!-- Meta: fecha · categoría -->
+      <!-- Meta: solo fecha -->
       <div class="articulo-meta">
-        <time id="articulo-fecha" class="noticia-fecha"></time>
-        <span id="articulo-categoria" class="noticia-categoria"></span>
+        <time id="articulo-fecha" class="articulo-fecha"></time>
       </div>
 
       <!-- Bajada destacada -->

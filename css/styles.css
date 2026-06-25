@@ -744,14 +744,33 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-3px);
 }
 
+/* Wrapper de imagen: contexto para el badge de fecha */
+.noticia-imagen {
+  position: relative;
+  flex-shrink: 0;
+}
+
 /* Foto de la tarjeta */
 .noticia-foto {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
   background-color: var(--crema-medio);
   display: block;
-  flex-shrink: 0;
+}
+
+/* Fecha como badge superpuesto sobre la imagen de la tarjeta */
+.noticia-imagen .noticia-fecha {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.6rem;
+  background-color: rgba(31, 77, 58, 0.88);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
 }
 
 /* Cuerpo de la tarjeta */
@@ -760,16 +779,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-
-/* Fecha en color tierra */
-.noticia-fecha {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--tierra);
-  display: block;
-  margin-bottom: 0.25rem;
-  letter-spacing: 0.02em;
 }
 
 /* Categoría */
@@ -990,14 +999,34 @@ h1, h2, h3, h4, h5, h6 {
 
 /* NOTICIAS — ARTÍCULO ABIERTO */
 
+/* Hero: wrapper con posición relativa para el badge de categoría */
+.articulo-hero {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
 /* Foto a ancho completo */
 .articulo-foto {
   width: 100%;
-  height: 380px;
+  height: 460px;
   object-fit: cover;
   background-color: var(--crema-medio);
   display: block;
-  margin-bottom: 2rem;
+}
+
+/* Badge de categoría superpuesto sobre la foto hero */
+.articulo-cat-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--dorado);
+  color: var(--verde-pino);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
 }
 
 /* Contenido con max-width para legibilidad */
@@ -1013,13 +1042,20 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-/* Meta: fecha y categoría en la misma línea */
+/* Meta: fecha bajo el título */
 .articulo-meta {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+}
+
+/* Fecha en el artículo individual */
+.articulo-fecha {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #8a9aaa;
+  letter-spacing: 0.03em;
 }
 
 /* Bajada destacada con borde dorado a la izquierda */
@@ -1807,9 +1843,12 @@ a.dato-contacto:focus {
   }
 
   /* Reducir altura de la foto del artículo abierto */
-  .articulo-foto {
-    height: 220px;
+  .articulo-hero {
     margin-bottom: 1.25rem;
+  }
+
+  .articulo-foto {
+    height: 240px;
   }
 
   /* Reducir altura máxima de la foto en detalle de quiénes somos */
