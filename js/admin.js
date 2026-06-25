@@ -12,8 +12,7 @@ document.querySelectorAll('#contenido-menu .enlace-menu').forEach(function (enla
   });
 });
 
-const meses = ['enero','febrero','marzo','abril','mayo','junio',
-             'julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 
 function guardarNoticias() {
   localStorage.setItem('noticias', JSON.stringify(noticias));
@@ -37,14 +36,14 @@ function abrirFormulario(id) {
   if (id) {
     let n = noticias.find(function (x) { return x.id === id; });
     document.getElementById('titulo-formulario-admin').textContent = 'Editar noticia';
-    document.getElementById('admin-id').value        = n.id;
-    document.getElementById('admin-titulo').value     = n.titulo;
-    document.getElementById('admin-categoria').value  = n.categoria;
-    document.getElementById('admin-fecha').value      = n.fecha;
-    document.getElementById('admin-foto').value       = n.foto;
-    document.getElementById('admin-alt').value        = n.alt;
-    document.getElementById('admin-bajada').value     = n.bajada;
-    document.getElementById('admin-cuerpo').value     = n.cuerpo;
+    document.getElementById('admin-id').value = n.id;
+    document.getElementById('admin-titulo').value = n.titulo;
+    document.getElementById('admin-categoria').value = n.categoria;
+    document.getElementById('admin-fecha').value = n.fecha;
+    document.getElementById('admin-foto').value = n.foto;
+    document.getElementById('admin-alt').value = n.alt;
+    document.getElementById('admin-bajada').value = n.bajada;
+    document.getElementById('admin-cuerpo').value = n.cuerpo;
   } else {
     document.getElementById('titulo-formulario-admin').textContent = 'Agregar noticia';
     document.getElementById('admin-id').value = '';
@@ -89,32 +88,32 @@ document.getElementById('btn-cancelar').addEventListener('click', cerrarFormular
 document.getElementById('formulario-admin').addEventListener('submit', function (e) {
   e.preventDefault();
 
-  let id        = document.getElementById('admin-id').value;
-  let titulo    = document.getElementById('admin-titulo').value.trim();
+  let id = document.getElementById('admin-id').value;
+  let titulo = document.getElementById('admin-titulo').value.trim();
   let categoria = document.getElementById('admin-categoria').value;
-  let fecha     = document.getElementById('admin-fecha').value;
-  let foto      = document.getElementById('admin-foto').value.trim() || 'img/img_logo.jpeg';
-  let alt       = document.getElementById('admin-alt').value.trim() || titulo;
-  let bajada    = document.getElementById('admin-bajada').value.trim();
-  let cuerpo    = document.getElementById('admin-cuerpo').value.trim();
+  let fecha = document.getElementById('admin-fecha').value;
+  let foto = document.getElementById('admin-foto').value.trim() || 'img/img_logo.jpeg';
+  let alt = document.getElementById('admin-alt').value.trim() || titulo;
+  let bajada = document.getElementById('admin-bajada').value.trim();
+  let cuerpo = document.getElementById('admin-cuerpo').value.trim();
 
   let hayError = false;
-  if (!titulo)    { marcarError('titulo',    'El título es obligatorio.');    hayError = true; }
+  if (!titulo)    { marcarError('titulo',    'El título es obligatorio.'); hayError = true; }
   if (!categoria) { marcarError('categoria', 'La categoría es obligatoria.'); hayError = true; }
-  if (!fecha)     { marcarError('fecha',     'La fecha es obligatoria.');     hayError = true; }
-  if (!cuerpo)    { marcarError('cuerpo',    'El cuerpo es obligatorio.');    hayError = true; }
+  if (!fecha)     { marcarError('fecha',     'La fecha es obligatoria.'); hayError = true; }
+  if (!cuerpo)    { marcarError('cuerpo',    'El cuerpo es obligatorio.'); hayError = true; }
   if (hayError) return;
 
   let noticia = {
-    id:         id || generarId(),
-    titulo:     titulo,
-    categoria:  categoria,
-    fecha:      fecha,
+    id: id || generarId(),
+    titulo: titulo,
+    categoria: categoria,
+    fecha: fecha,
     fechaTexto: fechaATexto(fecha),
-    foto:       foto,
-    alt:        alt,
-    bajada:     bajada,
-    cuerpo:     cuerpo
+    foto: foto,
+    alt: alt,
+    bajada: bajada,
+    cuerpo: cuerpo
   };
 
   if (id) {

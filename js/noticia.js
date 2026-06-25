@@ -23,8 +23,8 @@ if (!noticia) {
   fecha.setAttribute('datetime', noticia.fecha);
 
   document.getElementById('articulo-categoria').textContent = noticia.categoria;
-  document.getElementById('articulo-bajada').textContent    = noticia.bajada;
-  document.getElementById('articulo-cuerpo').innerHTML      = noticia.cuerpo;
+  document.getElementById('articulo-bajada').textContent = noticia.bajada;
+  document.getElementById('articulo-cuerpo').innerHTML = noticia.cuerpo;
 
   let url  = window.location.href;
   let texto = noticia.titulo;

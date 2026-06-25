@@ -86,16 +86,16 @@ function abrirDetalle(idTema) {
 function mostrarDetalle(indice) {
   let tema = temas[indice];
 
-  document.getElementById('detalle-foto').src    = tema.foto;
-  document.getElementById('detalle-foto').alt    = tema.alt;
+  document.getElementById('detalle-foto').src = tema.foto;
+  document.getElementById('detalle-foto').alt = tema.alt;
   document.getElementById('detalle-titulo').textContent = tema.titulo;
-  document.getElementById('detalle-cuerpo').innerHTML   = tema.cuerpo;
-  document.getElementById('miga-actual').textContent    = tema.titulo;
+  document.getElementById('detalle-cuerpo').innerHTML = tema.cuerpo;
+  document.getElementById('miga-actual').textContent = tema.titulo;
 
   document.getElementById('boton-anterior').disabled = (indice === 0);
   document.getElementById('boton-siguiente').disabled = (indice === temas.length - 1);
 
-  document.getElementById('indice-quienes').hidden  = true;
+  document.getElementById('indice-quienes').hidden = true;
   document.getElementById('detalle-quienes').hidden = false;
 
   document.getElementById('quienes').scrollIntoView({ behavior: 'smooth' });
@@ -104,7 +104,7 @@ function mostrarDetalle(indice) {
 
 function cerrarDetalle() {
   document.getElementById('detalle-quienes').hidden = true;
-  document.getElementById('indice-quienes').hidden  = false;
+  document.getElementById('indice-quienes').hidden = false;
   document.getElementById('quienes').scrollIntoView({ behavior: 'smooth' });
 }
 
