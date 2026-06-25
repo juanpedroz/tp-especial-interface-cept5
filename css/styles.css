@@ -110,13 +110,10 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--dorado);
 }
 
-<<<<<<< HEAD
 .seccion-contacto {
   justify-content: flex-start;
 }
 
-=======
->>>>>>> 0cbc69e467c91b5c7b17a0fd91dcdab0153632d1
 .seccion > .container {
   width: 100%;
 }
